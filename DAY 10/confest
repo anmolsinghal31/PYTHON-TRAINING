@@ -1,0 +1,4 @@
+project/
+├── conftest.py
+├── test_module_a.py
+└── test_module_b.py
