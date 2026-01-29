@@ -57,75 +57,77 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python tests.Python tests for DAY 10 QUESTION 01.test_divide_by_zero.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_004_parameters.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ABC_Constructor.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Abstract_class.executor&quot;: &quot;Run&quot;,
-    &quot;Python.BeautifulSoap.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CASE STUDY 1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CLASS.executor&quot;: &quot;Run&quot;,
-    &quot;Python.CONSTRUCTORS_AND_DESTRUCTERS.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Code.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DAY 04 QUESTION 1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DAY 04 QUESTION 2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DAY 05 Q1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DAY 05 Q2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DAY 06 Q1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DAY 06 Q2.executor&quot;: &quot;Run&quot;,
-    &quot;Python.DAY 08 Q1.executor&quot;: &quot;Run&quot;,
-    &quot;Python.FlaskUser.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Flask_Request.executor&quot;: &quot;Run&quot;,
-    &quot;Python.GetRequest.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Hierarcheal.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Inheritance.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Match.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Method Overloading.executor&quot;: &quot;Run&quot;,
-    &quot;Python.MultiLevel Inheritance.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Multiple Inheritance.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Multiple_Abstract.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Operator Overloading.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Overriding.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Patch.executor&quot;: &quot;Run&quot;,
-    &quot;Python.SubProcess.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Threading.executor&quot;: &quot;Run&quot;,
-    &quot;Python.app (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.client.executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANMOL SINGHAL/PycharmProjects/PythonProject2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python tests.Python tests for DAY 10 QUESTION 01.test_divide_by_zero.executor": "Run",
+    "Python tests.Python tests in test_004_parameters.py.executor": "Run",
+    "Python.ABC_Constructor.executor": "Run",
+    "Python.Abstract_class.executor": "Run",
+    "Python.BeautifulSoap.executor": "Run",
+    "Python.CASE STUDY 1.executor": "Run",
+    "Python.CLASS.executor": "Run",
+    "Python.CONSTRUCTORS_AND_DESTRUCTERS.executor": "Run",
+    "Python.Code.executor": "Run",
+    "Python.DAY 04 QUESTION 1.executor": "Run",
+    "Python.DAY 04 QUESTION 2.executor": "Run",
+    "Python.DAY 05 Q1.executor": "Run",
+    "Python.DAY 05 Q2.executor": "Run",
+    "Python.DAY 06 Q1.executor": "Run",
+    "Python.DAY 06 Q2.executor": "Run",
+    "Python.DAY 08 Q1.executor": "Run",
+    "Python.FlaskUser.executor": "Run",
+    "Python.Flask_Request.executor": "Run",
+    "Python.GetRequest.executor": "Run",
+    "Python.Hierarcheal.executor": "Run",
+    "Python.Inheritance.executor": "Run",
+    "Python.Match.executor": "Run",
+    "Python.Method Overloading.executor": "Run",
+    "Python.MultiLevel Inheritance.executor": "Run",
+    "Python.Multiple Inheritance.executor": "Run",
+    "Python.Multiple_Abstract.executor": "Run",
+    "Python.Operator Overloading.executor": "Run",
+    "Python.Overriding.executor": "Run",
+    "Python.Patch.executor": "Run",
+    "Python.SubProcess.executor": "Run",
+    "Python.Threading.executor": "Run",
+    "Python.app (1).executor": "Run",
+    "Python.app.executor": "Run",
+    "Python.client.executor": "Run",
+    "Python.main.executor": "Run",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "ai.playground.ignore.import.keys.banner.in.settings": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/ANMOL SINGHAL/PycharmProjects/PythonProject2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2" />
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 07\SCREENSHOTS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 11 (pytest)\DAY 11 QUESTION 1" />
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2" />
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 07" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests for DAY 10 QUESTION 01.test_divide_by_zero">
+  <component name="RunManager" selected="Robot.001A.robot">
     <configuration name="BeautifulSoap" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject2" />
       <option name="ENV_FILES" value="" />
@@ -142,30 +144,6 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="RUN_TOOL" value="" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DAY 08/BeautifulSoap.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="app (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DAY 07" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DAY 07/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -194,6 +172,30 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="001A.robot" type="RobotRunConfiguration" factoryName="RobotRunConfiguration" temporary="true">
+      <module name="PythonProject2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="robot.run" />
+      <option name="PARAMETERS" value="--test &quot;PythonProject2.DAY 12.RobotFW.MyTest.001A.robot&quot; ." />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="true" />
+      <option name="MODULE_MODE" value="true" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
       <method v="2" />
@@ -234,11 +236,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Robot.001A.robot" />
         <item itemvalue="Python tests.Python tests for DAY 10 QUESTION 01.test_divide_by_zero" />
         <item itemvalue="Python tests.Python tests in test_004_parameters.py" />
         <item itemvalue="Python.app" />
         <item itemvalue="Python.BeautifulSoap" />
-        <item itemvalue="Python.app (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -265,7 +267,8 @@
       <workItem from="1769165035080" duration="3461000" />
       <workItem from="1769488627030" duration="7427000" />
       <workItem from="1769583295620" duration="3217000" />
-      <workItem from="1769601028001" duration="805000" />
+      <workItem from="1769601028001" duration="5216000" />
+      <workItem from="1769679020591" duration="5212000" />
     </task>
     <servers />
   </component>

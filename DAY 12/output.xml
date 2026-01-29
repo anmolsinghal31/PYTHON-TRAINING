@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.3 on win32)" generated="2026-01-29T16:46:55.362644" rpa="false" schemaversion="5">
+<suite id="s1" name="Verify Env" source="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12\DAY 12 QUESTION 02\verify_env.robot">
+<test id="s1-t1" name="Verify Environment Dependencies" line="8">
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:46:55.892761" level="INFO">Starting process:
+python --version</msg>
+<msg time="2026-01-29T16:46:55.911638" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:46:55.990432" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:46:55.991936" level="INFO">${py_check} = &lt;result object with rc 0&gt;</msg>
+<var>${py_check}</var>
+<arg>python --version</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:46:55.891934" elapsed="0.100098"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-01-29T16:46:55.994071" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${py_check.rc}</arg>
+<arg>0</arg>
+<arg>msg=Python is not installed or not in PATH.</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-01-29T16:46:55.992928" elapsed="0.001240"/>
+</kw>
+<kw name="Run Process" owner="Process">
+<msg time="2026-01-29T16:46:55.994808" level="INFO">Starting process:
+robot --version</msg>
+<msg time="2026-01-29T16:46:56.005461" level="INFO">Waiting for process to complete.</msg>
+<msg time="2026-01-29T16:46:56.369914" level="INFO">Process completed.</msg>
+<msg time="2026-01-29T16:46:56.370067" level="INFO">${rf_check} = &lt;result object with rc 251&gt;</msg>
+<var>${rf_check}</var>
+<arg>robot --version</arg>
+<arg>shell=True</arg>
+<doc>Runs a process and waits for it to complete.</doc>
+<status status="PASS" start="2026-01-29T16:46:55.994497" elapsed="0.375595"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-01-29T16:46:56.370918" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<msg time="2026-01-29T16:46:56.371029" level="FAIL">Robot Framework is not installed.: 251 != 0</msg>
+<arg>${rf_check.rc}</arg>
+<arg>0</arg>
+<arg>msg=Robot Framework is not installed.</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="FAIL" start="2026-01-29T16:46:56.370363" elapsed="0.000784">Robot Framework is not installed.: 251 != 0</status>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- CHECK RESULTS ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:46:56.371366" elapsed="0.000032"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${rf_check.stdout}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2026-01-29T16:46:56.371547" elapsed="0.000026"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<var>${status}</var>
+<var>${val}</var>
+<arg>Get Library Instance</arg>
+<arg>SeleniumLibrary</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="NOT RUN" start="2026-01-29T16:46:56.371726" elapsed="0.000025"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${status}' == 'FAIL'</arg>
+<arg>Fail</arg>
+<arg>SeleniumLibrary is not installed.</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2026-01-29T16:46:56.371884" elapsed="0.000021"/>
+</kw>
+<doc>Checks Python, Robot Framework, and SeleniumLibrary.</doc>
+<status status="FAIL" start="2026-01-29T16:46:55.890500" elapsed="0.481583">Robot Framework is not installed.: 251 != 0</status>
+</test>
+<doc>Verification script for Environment Setup.</doc>
+<status status="FAIL" start="2026-01-29T16:46:55.364567" elapsed="1.007975"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Verify Env" id="s1" pass="0" fail="1" skip="0">Verify Env</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

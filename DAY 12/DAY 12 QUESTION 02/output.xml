@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.3 on win32)" generated="2026-01-29T16:57:06.325981" rpa="false" schemaversion="5">
+<suite id="s1" name="Verify Env" source="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12\DAY 12 QUESTION 02\verify_env.robot">
+<test id="s1-t1" name="Verify My Automation Environment" line="7">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n--- STARTING SYSTEM CHECK ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.830636" elapsed="0.000831"/>
+</kw>
+<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
+<kw name="Get Library Instance" owner="BuiltIn">
+<arg>SeleniumLibrary</arg>
+<doc>Returns the currently active instance of the specified library.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.833946" elapsed="0.001051"/>
+</kw>
+<msg time="2026-01-29T16:57:06.835234" level="INFO">${status} = PASS</msg>
+<msg time="2026-01-29T16:57:06.835314" level="INFO">${val} = &lt;SeleniumLibrary.SeleniumLibrary object at 0x0000016BF761BA10&gt;</msg>
+<var>${status}</var>
+<var>${val}</var>
+<arg>Get Library Instance</arg>
+<arg>SeleniumLibrary</arg>
+<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.832025" elapsed="0.003329"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${status}</arg>
+<arg>PASS</arg>
+<arg>msg=SeleniumLibrary is not ready!</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.835707" elapsed="0.000364"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>SeleniumLibrary: OK</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.836329" elapsed="0.000391"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Robot Framework is active and running this test!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.837044" elapsed="0.000275"/>
+</kw>
+<kw name="Should Not Be Empty" owner="BuiltIn">
+<msg time="2026-01-29T16:57:06.838041" level="INFO">Length is 79.</msg>
+<arg>C:\\Users\\ANMOL SINGHAL\\PycharmProjects\\PythonProject2\\DAY 12\\DAY 12 QUESTION 02</arg>
+<doc>Verifies that the given item is not empty.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.837568" elapsed="0.000525"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>--- ALL SYSTEMS READY ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.838372" elapsed="0.000306"/>
+</kw>
+<doc>Checks Python and Library status.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.829017" elapsed="0.009929"/>
+</test>
+<doc>Verification script for Environment Setup.</doc>
+<status status="PASS" start="2026-01-29T16:57:06.328688" elapsed="0.511021"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Verify Env" id="s1" pass="1" fail="0" skip="0">Verify Env</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
