@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.3 on win32)" generated="2026-02-02T16:28:48.618250" rpa="false" schemaversion="5">
+<suite id="s1" name="Test 01" source="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12 &amp; DAY 13\DAY 14 QUESTION 01\Test 01.robot">
+<kw name="Create Session" owner="RequestsLibrary" type="SETUP">
+<msg time="2026-02-02T16:28:48.922487" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T16:28:48.921876" elapsed="0.000795"/>
+</kw>
+<test id="s1-t1" name="Create and Verify User" line="18">
+<kw name="Log To Console" owner="BuiltIn" type="SETUP">
+<arg>--- Starting Test Case ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T16:28:48.923187" elapsed="0.000312"/>
+</kw>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T16:28:48.923984" level="INFO">${data} = {'name': 'Anmol'}</msg>
+<var>${data}</var>
+<arg>name=Anmol</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T16:28:48.923674" elapsed="0.000333"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T16:28:48.967794" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '17', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Anmol"}' 
+ </msg>
+<msg time="2026-02-02T16:28:48.967944" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 10:58:48 GMT', 'Content-Type': 'application/json', 'Content-Length': '33', 'Connection': 'close'} 
+ body={
+  "id": 8,
+  "name": "Anmol"
+}
+ 
+ </msg>
+<msg time="2026-02-02T16:28:48.968110" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T16:28:48.924145" elapsed="0.044000"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T16:28:48.970761" elapsed="0.000783"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>User Created Successfully: ${response.json()}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T16:28:48.972580" elapsed="0.000828"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn" type="TEARDOWN">
+<arg>--- Finished Test Case ---</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T16:28:48.973646" elapsed="0.000262"/>
+</kw>
+<tag>Regression</tag>
+<tag>SMOKE</tag>
+<status status="PASS" start="2026-02-02T16:28:48.922792" elapsed="0.051195"/>
+</test>
+<kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
+<msg time="2026-02-02T16:28:48.974532" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2026-02-02T16:28:48.974467" elapsed="0.000130"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:28:48.622013" elapsed="0.352610"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+<stat pass="1" fail="0" skip="0">SMOKE</stat>
+</tag>
+<suite>
+<stat name="Test 01" id="s1" pass="1" fail="0" skip="0">Test 01</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,201 +1,481 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.3 on win32)" generated="2026-01-30T15:53:02.186479" rpa="false" schemaversion="5">
-<suite id="s1" name="Test01" source="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12\DAY 13 QUESTION 02\Test01.robot">
-<kw name="Open Registration Page" type="SETUP">
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:02.496829" level="INFO">Opening browser 'chrome' to base url 'https://tutorialsninja.com/demo/index.php?route=account/register'.</msg>
-<arg>${URL}</arg>
-<arg>${BROWSER}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-01-30T15:53:02.496480" elapsed="4.077470"/>
+<robot generator="Robot 7.4.1 (Python 3.13.3 on win32)" generated="2026-02-02T12:56:35.503065" rpa="false" schemaversion="5">
+<suite id="s1" name="MyTest08 Flaskapi" source="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12 &amp; DAY 13\RobotFW\MyTest08_Flaskapi.robot">
+<test id="s1-t1" name="Create new user" line="7">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.762655" level="INFO">Creating Session using : alias=postingsession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>postingsession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:56:35.761504" elapsed="0.001421"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-01-30T15:53:06.574898" elapsed="0.089689"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.765808" level="INFO">${data} = {'name': 'varsha'}</msg>
+<var>${data}</var>
+<arg>name=varsha</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.765363" elapsed="0.000477"/>
 </kw>
-<status status="PASS" start="2026-01-30T15:53:02.495049" elapsed="4.169784"/>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.788125" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '18', 'Content-Type': 'application/json'} 
+ body=b'{"name": "varsha"}' 
+ </msg>
+<msg time="2026-02-02T12:56:35.788295" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 07:26:35 GMT', 'Content-Type': 'application/json', 'Content-Length': '34', 'Connection': 'close'} 
+ body={
+  "id": 7,
+  "name": "varsha"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:56:35.788454" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>postingsession</arg>
+<arg>/users</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.766107" elapsed="0.022375"/>
 </kw>
-<test id="s1-t1" name="Register_User_With_ANMOL" line="50">
-<kw name="Register User On TutorialsNinja">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>id=input-firstname</arg>
-<arg>15s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-01-30T15:53:06.675025" elapsed="0.151615"/>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.799850" elapsed="0.000524"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:06.827215" level="INFO">Typing text 'ANMOL' into text field 'id=input-firstname'.</msg>
-<arg>id=input-firstname</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-30T15:53:06.826897" elapsed="0.680967"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.802038" level="INFO">${user_json} = {'id': 7, 'name': 'varsha'}</msg>
+<var>${user_json}</var>
+<arg>$response.json()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.801343" elapsed="0.000734"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:07.508689" level="INFO">Typing text 'SINGHAL' into text field 'id=input-lastname'.</msg>
-<arg>id=input-lastname</arg>
-<arg>SINGHAL</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-30T15:53:07.508304" elapsed="0.859507"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.802960" level="INFO">{'id': 7, 'name': 'varsha'}=</msg>
+<arg>${user_json}=</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.802360" elapsed="0.000761"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:08.373048" level="INFO">Typing text 'anmolANMOL@gmail.com' into text field 'id=input-email'.</msg>
-<arg>id=input-email</arg>
-<arg>anmol${username}@gmail.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-30T15:53:08.372441" elapsed="0.241670"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:08.615001" level="INFO">Typing text '7819932006' into text field 'id=input-telephone'.</msg>
-<arg>id=input-telephone</arg>
-<arg>7819932006</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-30T15:53:08.614496" elapsed="0.162660"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:08.777846" level="INFO">Typing password into text field 'id=input-password'.</msg>
-<msg time="2026-01-30T15:53:08.854447" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>id=input-password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-30T15:53:08.777462" elapsed="0.163816"/>
-</kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:08.941939" level="INFO">Typing password into text field 'id=input-confirm'.</msg>
-<msg time="2026-01-30T15:53:09.013982" level="INFO">Temporally setting log level to: NONE</msg>
-<arg>id=input-confirm</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-30T15:53:08.941566" elapsed="0.164540"/>
-</kw>
-<kw name="Select Checkbox" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:09.107349" level="INFO">Selecting checkbox 'name=agree'.</msg>
-<arg>name=agree</arg>
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-30T15:53:09.106482" elapsed="0.149477"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:09.424706" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="DAY_13_QUESTION_1/registration_ANMOL.png"&gt;&lt;img src="DAY_13_QUESTION_1/registration_ANMOL.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>DAY_13_QUESTION_1/registration_${username}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2026-01-30T15:53:09.256334" elapsed="0.168577"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:09.425594" level="INFO">Clicking button 'xpath=//input[@value='Continue']'.</msg>
-<arg>xpath=//input[@value='Continue']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-01-30T15:53:09.425247" elapsed="2.258682"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2026-01-30T15:53:14.686346" level="INFO">Slept 3 seconds.</msg>
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-01-30T15:53:11.684199" elapsed="3.002279"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:14.686851" level="INFO">Opening url 'https://tutorialsninja.com/demo/index.php?route=account/register'</msg>
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-01-30T15:53:14.686659" elapsed="0.313331"/>
-</kw>
-<arg>username=ANMOL</arg>
-<arg>password=admin123</arg>
-<status status="PASS" start="2026-01-30T15:53:06.674179" elapsed="8.328389"/>
-</kw>
-<status status="PASS" start="2026-01-30T15:53:06.664981" elapsed="8.338995"/>
+<status status="PASS" start="2026-02-02T12:56:35.760503" elapsed="0.042837"/>
 </test>
-<test id="s1-t2" name="Register_User_With_anmolsinghal015@gmail.com" line="50">
-<kw name="Register User On TutorialsNinja">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-01-30T15:53:30.356605" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-4.png"&gt;&lt;img src="selenium-screenshot-4.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-01-30T15:53:30.356782" level="FAIL">Element 'id=input-firstname' not visible after 15 seconds.</msg>
-<arg>id=input-firstname</arg>
-<arg>15s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-01-30T15:53:15.045195" elapsed="15.316734">Element 'id=input-firstname' not visible after 15 seconds.</status>
+<test id="s1-t2" name="update user" line="14">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.804439" level="INFO">Creating Session using : alias=postingsession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>postingsession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:56:35.804244" elapsed="0.000449"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>id=input-firstname</arg>
-<arg>${username}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.362105" elapsed="0.000031"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.805373" level="INFO">${data} = {'name': 'Pooja'}</msg>
+<var>${data}</var>
+<arg>name=Pooja</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.804958" elapsed="0.000453"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>id=input-lastname</arg>
-<arg>SINGHAL</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.362209" elapsed="0.000018"/>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.832757" level="INFO">PUT Request : url=http://127.0.0.1:5000/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '17', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Pooja"}' 
+ </msg>
+<msg time="2026-02-02T12:56:35.832844" level="INFO">PUT Response : url=http://127.0.0.1:5000/users/1 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 07:26:35 GMT', 'Content-Type': 'application/json', 'Content-Length': '33', 'Connection': 'close'} 
+ body={
+  "id": 1,
+  "name": "Pooja"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:56:35.832978" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>postingsession</arg>
+<arg>/users/1</arg>
+<arg>json=${data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.805635" elapsed="0.027370"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>id=input-email</arg>
-<arg>anmol${username}@gmail.com</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.362289" elapsed="0.000018"/>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.838132" elapsed="0.000332"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<arg>id=input-telephone</arg>
-<arg>7819932006</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.362367" elapsed="0.000017"/>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.839978" level="INFO">${user_json} = {'id': 1, 'name': 'Pooja'}</msg>
+<var>${user_json}</var>
+<arg>$response.json()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.838735" elapsed="0.001292"/>
 </kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<arg>id=input-password</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.362445" elapsed="0.000017"/>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.841749" level="INFO">{'id': 1, 'name': 'Pooja'}=</msg>
+<arg>${user_json}=</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.841002" elapsed="0.012032"/>
 </kw>
-<kw name="Input Password" owner="SeleniumLibrary">
-<arg>id=input-confirm</arg>
-<arg>${password}</arg>
-<doc>Types the given password into the text field identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.362665" elapsed="0.000025"/>
-</kw>
-<kw name="Select Checkbox" owner="SeleniumLibrary">
-<arg>name=agree</arg>
-<doc>Selects the checkbox identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.362769" elapsed="0.000021"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<arg>DAY_13_QUESTION_1/registration_${username}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.362875" elapsed="0.000024"/>
-</kw>
-<kw name="Click Button" owner="SeleniumLibrary">
-<arg>xpath=//input[@value='Continue']</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.362970" elapsed="0.000017"/>
-</kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>3s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.363050" elapsed="0.000020"/>
-</kw>
-<kw name="Go To" owner="SeleniumLibrary">
-<arg>${URL}</arg>
-<doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="NOT RUN" start="2026-01-30T15:53:30.363126" elapsed="0.000019"/>
-</kw>
-<arg>username=anmolsinghal015@gmail.com</arg>
-<arg>password=7819932006</arg>
-<status status="FAIL" start="2026-01-30T15:53:15.039645" elapsed="15.323628">Element 'id=input-firstname' not visible after 15 seconds.</status>
-</kw>
-<status status="FAIL" start="2026-01-30T15:53:15.007207" elapsed="15.356461">Element 'id=input-firstname' not visible after 15 seconds.</status>
+<status status="PASS" start="2026-02-02T12:56:35.803762" elapsed="0.049662"/>
 </test>
-<kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
-<doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-01-30T15:53:30.364485" elapsed="2.292999"/>
+<test id="s1-t3" name="patch user" line="22">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.857547" level="INFO">Creating Session using : alias=postingsession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>postingsession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:56:35.857193" elapsed="0.000543"/>
 </kw>
-<status status="FAIL" start="2026-01-30T15:53:02.187891" elapsed="30.469717"/>
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.861761" level="INFO">${data} = {'name': 'Pooja patched'}</msg>
+<var>${data}</var>
+<arg>name=Pooja patched</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.861064" elapsed="0.000746"/>
+</kw>
+<kw name="PUT On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.885667" level="INFO">PUT Request : url=http://127.0.0.1:5000/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '25', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Pooja patched"}' 
+ </msg>
+<msg time="2026-02-02T12:56:35.885760" level="INFO">PUT Response : url=http://127.0.0.1:5000/users/1 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 07:26:35 GMT', 'Content-Type': 'application/json', 'Content-Length': '41', 'Connection': 'close'} 
+ body={
+  "id": 1,
+  "name": "Pooja patched"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:56:35.885913" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>postingsession</arg>
+<arg>/users/1</arg>
+<arg>json=${data}</arg>
+<doc>Sends a PUT request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.868520" elapsed="0.017420"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.886629" elapsed="0.000290"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.897551" level="INFO">${user_json} = {'id': 1, 'name': 'Pooja patched'}</msg>
+<var>${user_json}</var>
+<arg>$response.json()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.896457" elapsed="0.001146"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.898757" level="INFO">{'id': 1, 'name': 'Pooja patched'}=</msg>
+<arg>${user_json}=</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.898069" elapsed="0.002729"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:56:35.856066" elapsed="0.045458"/>
+</test>
+<test id="s1-t4" name="Verify Get All Users" line="30">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.902740" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:56:35.902531" elapsed="0.000384"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.917868" level="INFO">GET Request : url=http://127.0.0.1:5000/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T12:56:35.918008" level="INFO">GET Response : url=http://127.0.0.1:5000/users 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 07:26:35 GMT', 'Content-Type': 'application/json', 'Content-Length': '313', 'Connection': 'close'} 
+ body=[
+  {
+    "id": 1,
+    "name": "Pooja patched"
+  },
+  {
+    "id": 2,
+    "name": "Hema_Patched"
+  },
+  {
+    "id": 3,
+    "name": "Bhanu"
+  },
+  {
+    "id": 4,
+    "name": "Bhanu"
+  },
+  {
+    "id": 5,
+    "name": "Bhanu"
+  },
+  {
+    "id": 6,
+    "name": "Bhanu"
+  },
+  {
+    "id": 7,
+    "name": "varsha"
+  }
+]
+ 
+ </msg>
+<msg time="2026-02-02T12:56:35.918205" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.903161" elapsed="0.015072"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.918516" elapsed="0.000262"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.919060" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2026-02-02T12:56:35.937671" level="INFO">To JSON using : content=[
+  {
+    "id": 1,
+    "name": "Pooja patched"
+  },
+  {
+    "id": 2,
+    "name": "Hema_Patched"
+  },
+  {
+    "id": 3,
+    "name": "Bhanu"
+  },
+  {
+    "id": 4,
+    "name": "Bhanu"
+  },
+  {
+    "id": 5,
+    "name": "Bhanu"
+  },
+  {
+    "id": 6,
+    "name": "Bhanu"
+  },
+  {
+    "id": 7,
+    "name": "varsha"
+  }
+]
+ </msg>
+<msg time="2026-02-02T12:56:35.937726" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2026-02-02T12:56:35.937841" level="INFO">${res_jon} = [{'id': 1, 'name': 'Pooja patched'}, {'id': 2, 'name': 'Hema_Patched'}, {'id': 3, 'name': 'Bhanu'}, {'id': 4, 'name': 'Bhanu'}, {'id': 5, 'name': 'Bhanu'}, {'id': 6, 'name': 'Bhanu'}, {'id': 7, 'name'...</msg>
+<var>${res_jon}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.918996" elapsed="0.018871"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.938684" level="INFO">[{'id': 1, 'name': 'Pooja patched'}, {'id': 2, 'name': 'Hema_Patched'}, {'id': 3, 'name': 'Bhanu'}, {'id': 4, 'name': 'Bhanu'}, {'id': 5, 'name': 'Bhanu'}, {'id': 6, 'name': 'Bhanu'}, {'id': 7, 'name': 'varsha'}]=</msg>
+<arg>${res_jon}=</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.938190" elapsed="0.000656"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:56:35.902129" elapsed="0.039047"/>
+</test>
+<test id="s1-t5" name="Verify Get Single user" line="37">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.943462" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:56:35.943216" elapsed="0.000445"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.948086" level="INFO">GET Request : url=http://127.0.0.1:5000/users/3 
+ path_url=/users/3 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T12:56:35.948208" level="INFO">GET Response : url=http://127.0.0.1:5000/users/3 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 07:26:35 GMT', 'Content-Type': 'application/json', 'Content-Length': '33', 'Connection': 'close'} 
+ body={
+  "id": 3,
+  "name": "Bhanu"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:56:35.948367" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users/3</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.944082" elapsed="0.004318"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.948957" elapsed="0.000784"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.950140" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2026-02-02T12:56:35.953946" level="INFO">To JSON using : content={
+  "id": 3,
+  "name": "Bhanu"
+}
+ </msg>
+<msg time="2026-02-02T12:56:35.954008" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2026-02-02T12:56:35.954137" level="INFO">${res_jon} = {'id': 3, 'name': 'Bhanu'}</msg>
+<var>${res_jon}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.950102" elapsed="0.004086"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T12:56:35.968472" level="INFO">{'id': 3, 'name': 'Bhanu'}=</msg>
+<arg>${res_jon}=</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T12:56:35.966389" elapsed="0.003227"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:56:35.942356" elapsed="0.031742"/>
+</test>
+<test id="s1-t6" name="Verify Get Single user not gound" line="43">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.980333" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:56:35.978910" elapsed="0.001986"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:35.997770" level="INFO">GET Request : url=http://127.0.0.1:5000/users/99999 
+ path_url=/users/99999 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T12:56:35.998215" level="INFO">GET Response : url=http://127.0.0.1:5000/users/99999 
+ status=404, reason=NOT FOUND 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 07:26:35 GMT', 'Content-Type': 'application/json', 'Content-Length': '34', 'Connection': 'close'} 
+ body={
+  "message": "user not found"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:56:36.001351" level="FAIL">HTTPError: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/users/99999</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users/99999</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2026-02-02T12:56:35.982036" elapsed="0.027901">HTTPError: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/users/99999</status>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>404</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" start="2026-02-02T12:56:36.011881" elapsed="0.000040"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:36.012204" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<var>${res_jon}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="NOT RUN" start="2026-02-02T12:56:36.012169" elapsed="0.000203"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<arg>${res_jon}=</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="NOT RUN" start="2026-02-02T12:56:36.012527" elapsed="0.000023"/>
+</kw>
+<status status="FAIL" start="2026-02-02T12:56:35.978431" elapsed="0.034368">HTTPError: 404 Client Error: NOT FOUND for url: http://127.0.0.1:5000/users/99999</status>
+</test>
+<test id="s1-t7" name="Verify Delete user by userid" line="50">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:36.013640" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T12:56:36.013471" elapsed="0.000801"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:36.026674" level="INFO">GET Request : url=http://127.0.0.1:5000/users/1 
+ path_url=/users/1 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg time="2026-02-02T12:56:36.026779" level="INFO">GET Response : url=http://127.0.0.1:5000/users/1 
+ status=200, reason=OK 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 07:26:36 GMT', 'Content-Type': 'application/json', 'Content-Length': '41', 'Connection': 'close'} 
+ body={
+  "id": 1,
+  "name": "Pooja patched"
+}
+ 
+ </msg>
+<msg time="2026-02-02T12:56:36.026944" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users/1</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T12:56:36.017779" elapsed="0.009193"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T12:56:36.082139" elapsed="0.000373"/>
+</kw>
+<kw name="To Json" owner="RequestsLibrary">
+<msg time="2026-02-02T12:56:36.086736" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2026-02-02T12:56:36.106113" level="INFO">To JSON using : content={
+  "id": 1,
+  "name": "Pooja patched"
+}
+ </msg>
+<msg time="2026-02-02T12:56:36.106164" level="INFO">To JSON using : pretty_print=False </msg>
+<msg time="2026-02-02T12:56:36.106263" level="INFO">${res_jon} = {'id': 1, 'name': 'Pooja patched'}</msg>
+<var>${res_jon}</var>
+<arg>${response.content}</arg>
+<doc>*DEPRECATED* Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</doc>
+<status status="PASS" start="2026-02-02T12:56:36.086660" elapsed="0.019628"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-02T12:56:36.112401" level="INFO">{'id': 1, 'name': 'Pooja patched'}=</msg>
+<arg>${res_jon}=</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-02T12:56:36.107635" elapsed="0.005216"/>
+</kw>
+<status status="PASS" start="2026-02-02T12:56:36.013153" elapsed="0.100494"/>
+</test>
+<status status="FAIL" start="2026-02-02T12:56:35.504981" elapsed="0.609741"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="1" skip="0">All Tests</stat>
+<stat pass="6" fail="1" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Test01" id="s1" pass="1" fail="1" skip="0">Test01</stat>
+<stat name="MyTest08 Flaskapi" id="s1" pass="6" fail="1" skip="0">MyTest08 Flaskapi</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2026-02-02T12:56:35.919060" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2026-02-02T12:56:35.950140" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2026-02-02T12:56:36.012204" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
+<msg time="2026-02-02T12:56:36.086736" level="WARN">Keyword 'RequestsLibrary.To Json' is deprecated. Please use ${resp.json()} instead. Have a look at the improved HTML output as pretty printing replacement.</msg>
 </errors>
 </robot>

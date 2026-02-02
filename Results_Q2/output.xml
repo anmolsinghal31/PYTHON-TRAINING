@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.3 on win32)" generated="2026-02-02T16:30:21.130892" rpa="false" schemaversion="5">
+<suite id="s1" name="Test 02" source="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12 &amp; DAY 13\DAY 14 QUESTION 01\Test 02.robot">
+<kw name="Create Session" owner="RequestsLibrary" type="SETUP">
+<msg time="2026-02-02T16:30:21.310502" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:5000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${baseurl}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2026-02-02T16:30:21.309990" elapsed="0.001075"/>
+</kw>
+<test id="s1-t1" name="Scenario: Add Multiple Users Using Keywords" line="20">
+<kw name="Create And Validate User">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T16:30:21.313038" level="INFO">${data} = {'name': 'Alice'}</msg>
+<var>${data}</var>
+<arg>name=${username}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.312469" elapsed="0.000610"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T16:30:21.324275" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '17', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Alice"}' 
+ </msg>
+<msg time="2026-02-02T16:30:21.324425" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 11:00:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '33', 'Connection': 'close'} 
+ body={
+  "id": 9,
+  "name": "Alice"
+}
+ 
+ </msg>
+<msg time="2026-02-02T16:30:21.324589" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.313212" elapsed="0.011406"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.324804" elapsed="0.000307"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Successfully created user: ${response.json()['name']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.325247" elapsed="0.001277"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-02-02T16:30:21.326618" elapsed="0.000077"/>
+</return>
+<arg>Alice</arg>
+<status status="PASS" start="2026-02-02T16:30:21.312228" elapsed="0.014621"/>
+</kw>
+<kw name="Create And Validate User">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T16:30:21.328661" level="INFO">${data} = {'name': 'Bob'}</msg>
+<var>${data}</var>
+<arg>name=${username}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.328300" elapsed="0.000391"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T16:30:21.332698" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '15', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Bob"}' 
+ </msg>
+<msg time="2026-02-02T16:30:21.332801" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 11:00:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '32', 'Connection': 'close'} 
+ body={
+  "id": 10,
+  "name": "Bob"
+}
+ 
+ </msg>
+<msg time="2026-02-02T16:30:21.332962" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.328779" elapsed="0.004211"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.333157" elapsed="0.000252"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Successfully created user: ${response.json()['name']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.333563" elapsed="0.000760"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-02-02T16:30:21.334394" elapsed="0.000054"/>
+</return>
+<arg>Bob</arg>
+<status status="PASS" start="2026-02-02T16:30:21.327309" elapsed="0.007260"/>
+</kw>
+<kw name="Create And Validate User">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2026-02-02T16:30:21.336142" level="INFO">${data} = {'name': 'Charlie'}</msg>
+<var>${data}</var>
+<arg>name=${username}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.335700" elapsed="0.000482"/>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<msg time="2026-02-02T16:30:21.341109" level="INFO">POST Request : url=http://127.0.0.1:5000/users 
+ path_url=/users 
+ headers={'User-Agent': 'python-requests/2.32.5', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '19', 'Content-Type': 'application/json'} 
+ body=b'{"name": "Charlie"}' 
+ </msg>
+<msg time="2026-02-02T16:30:21.341208" level="INFO">POST Response : url=http://127.0.0.1:5000/users 
+ status=201, reason=CREATED 
+ headers={'Server': 'Werkzeug/3.1.5 Python/3.13.3', 'Date': 'Mon, 02 Feb 2026 11:00:21 GMT', 'Content-Type': 'application/json', 'Content-Length': '36', 'Connection': 'close'} 
+ body={
+  "id": 11,
+  "name": "Charlie"
+}
+ 
+ </msg>
+<msg time="2026-02-02T16:30:21.341315" level="INFO">${response} = &lt;Response [201]&gt;</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/users</arg>
+<arg>json=${data}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.336322" elapsed="0.005022"/>
+</kw>
+<kw name="Status Should Be" owner="RequestsLibrary">
+<arg>201</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.341533" elapsed="0.000218"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Successfully created user: ${response.json()['name']}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-02T16:30:21.341854" elapsed="0.001466"/>
+</kw>
+<return>
+<value>${response}</value>
+<status status="PASS" start="2026-02-02T16:30:21.343421" elapsed="0.000049"/>
+</return>
+<arg>Charlie</arg>
+<status status="PASS" start="2026-02-02T16:30:21.335366" elapsed="0.008247"/>
+</kw>
+<tag>Regression</tag>
+<status status="PASS" start="2026-02-02T16:30:21.311453" elapsed="0.032407"/>
+</test>
+<kw name="Delete All Sessions" owner="RequestsLibrary" type="TEARDOWN">
+<msg time="2026-02-02T16:30:21.344701" level="INFO">Deleting All Sessions</msg>
+<doc>Removes all the session objects</doc>
+<status status="PASS" start="2026-02-02T16:30:21.344581" elapsed="0.000233"/>
+</kw>
+<status status="PASS" start="2026-02-02T16:30:21.134055" elapsed="0.210805"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat name="Test 02" id="s1" pass="1" fail="0" skip="0">Test 02</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
