@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.3 on win32)" generated="2026-02-03T17:17:10.097544" rpa="false" schemaversion="5">
+<suite id="s1" name="Automation" source="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\CaseStudy 04\automation.robot">
+<test id="s1-t1" name="Automate Patient Registration Form" line="10">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Launching Browser...</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-03T17:17:10.651540" elapsed="0.000748"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Entering Name: ${PATIENT_NAME}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-03T17:17:10.652591" elapsed="0.000589"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Selecting Disease: ${DISEASE}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-03T17:17:10.653392" elapsed="0.000316"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Clicking Submit Button</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-02-03T17:17:10.654113" elapsed="0.000326"/>
+</kw>
+<kw name="Verify Success Message">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-02-03T17:17:10.655243" level="INFO">Checking for message: Registration Successful</msg>
+<arg>Checking for message: ${expected_msg}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-02-03T17:17:10.655039" elapsed="0.000246"/>
+</kw>
+<arg>Registration Successful</arg>
+<status status="PASS" start="2026-02-03T17:17:10.654770" elapsed="0.000669"/>
+</kw>
+<doc>Testing the UI flow logic</doc>
+<status status="PASS" start="2026-02-03T17:17:10.650433" elapsed="0.005225"/>
+</test>
+<status status="PASS" start="2026-02-03T17:17:10.099379" elapsed="0.556810"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Automation" id="s1" pass="1" fail="0" skip="0">Automation</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
