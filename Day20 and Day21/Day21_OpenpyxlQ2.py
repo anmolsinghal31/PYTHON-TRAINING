@@ -1,6 +1,6 @@
 from openpyxl import load_workbook
 
-wb = load_workbook('sales_data.xlsx')
+wb = load_workbook('../Project 01/sales_data.xlsx')
 ws = wb['2025']
 
 # Add the header to the 4th column
