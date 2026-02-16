@@ -5,22 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7504f478-b4a5-4069-9e5b-2c9cd44a3fd7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Project 01/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project 01/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project 01/sales_summary.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Project 01/test_api.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/Day20_Q1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/Day20_Q1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/Day20_Q2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/Day20_Q2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/Day21.Q1.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/Day21.Q1.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/Day21_OpenpyxlQ2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/Day21_OpenpyxlQ2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/Day21_PandasQ2.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/Day21_PandasQ2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/driverfactory.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/driverfactory.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/googletest.py" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/googletest.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/sales_data.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Project 01/sales_data.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/sales_summary.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/sales_summary.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Day20/sales_summary_bonus.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Day20 and Day21/sales_summary_bonus.xlsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

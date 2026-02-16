@@ -2,46 +2,59 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
-# Temporary data storage (In-memory database)
 restaurants = []
+dishes = []
+users = []
+orders = []
+admin_approvals = []
 
-
-# 1. Register a Restaurant (Requirement #1)
 @app.route('/api/v1/restaurants', methods=['POST'])
 def register_restaurant():
     data = request.get_json()
-    # Basic validation
     if not data or 'name' not in data:
         return jsonify({"message": "Bad Request"}), 400
-
     restaurants.append(data)
     return jsonify(data), 201
 
-
-# 2. Get All Restaurants (Requirement #4)
 @app.route('/api/v1/restaurants', methods=['GET'])
 def get_restaurants():
     return jsonify(restaurants), 200
 
-
-# 3. Update Restaurant (Requirement #2)
-@app.route('/api/v1/restaurants/<string:name>', methods=['PUT'])
-def update_restaurant(name):
+@app.route('/api/v1/dishes', methods=['POST'])
+def add_dish():
     data = request.get_json()
-    for res in restaurants:
-        if res['name'] == name:
-            res.update(data)
-            return jsonify(res), 200
-    return jsonify({"message": "Not Found"}), 404
+    if not data or 'dish_name' not in data:
+        return jsonify({"message": "Invalid Dish Data"}), 400
+    dishes.append(data)
+    return jsonify({"message": "Dish added successfully", "dish": data}), 201
 
+@app.route('/api/v1/dishes', methods=['GET'])
+def get_all_dishes():
+    return jsonify(dishes), 200
 
-# 4. Delete Restaurant (Requirement #3)
-@app.route('/api/v1/restaurants/<string:name>', methods=['DELETE'])
-def delete_restaurant(name):
-    global restaurants
-    restaurants = [res for res in restaurants if res['name'] != name]
-    return jsonify({"message": "Restaurant Deleted"}), 200
+@app.route('/api/v1/admin/approve', methods=['POST'])
+def approve_restaurant():
+    data = request.get_json()
+    admin_approvals.append(data)
+    return jsonify({"status": "Success", "message": "Restaurant Approved by Admin"}), 200
 
+@app.route('/api/v1/users', methods=['POST'])
+def register_user():
+    data = request.get_json()
+    if not data or 'username' not in data:
+        return jsonify({"message": "Registration Failed"}), 400
+    users.append(data)
+    return jsonify({"message": "User Account Created", "user": data}), 201
+
+@app.route('/api/v1/orders', methods=['POST'])
+def place_order():
+    data = request.get_json()
+    orders.append(data)
+    return jsonify({"message": "Order Placed Successfully", "order_details": data}), 201
+
+@app.route('/api/v1/orders', methods=['GET'])
+def get_orders():
+    return jsonify(orders), 200
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
