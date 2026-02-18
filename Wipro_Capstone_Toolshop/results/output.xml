@@ -1,34 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.4.1 (Python 3.13.3 on win32)" generated="2026-02-18T12:31:13.950933" rpa="false" schemaversion="5">
+<robot generator="Robot 7.4.1 (Python 3.13.3 on win32)" generated="2026-02-18T15:11:37.812951" rpa="false" schemaversion="5">
 <suite id="s1" name="Test Csv Driven" source="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\Wipro_Capstone_Toolshop\robot_tests\test_csv_driven.robot">
 <kw name="Setup Browser" type="SETUP">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:14.344967" level="INFO">Opening browser 'Chrome' to base url 'https://practicesoftwaretesting.com/'.</msg>
+<msg time="2026-02-18T15:11:38.240083" level="INFO">Opening browser 'Chrome' to base url 'https://practicesoftwaretesting.com/'.</msg>
 <arg>${URL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2026-02-18T12:31:14.344752" elapsed="6.481212"/>
+<status status="PASS" start="2026-02-18T15:11:38.239868" elapsed="3.923616"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2026-02-18T12:31:20.826786" elapsed="0.414086"/>
+<status status="PASS" start="2026-02-18T15:11:42.164406" elapsed="2.207821"/>
 </kw>
 <kw name="Set Selenium Timeout" owner="SeleniumLibrary">
-<arg>15 seconds</arg>
+<arg>30 seconds</arg>
 <doc>Sets the timeout that is used by various keywords.</doc>
-<status status="PASS" start="2026-02-18T12:31:21.241183" elapsed="0.010575"/>
+<status status="PASS" start="2026-02-18T15:11:44.372608" elapsed="0.004087"/>
 </kw>
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>0.3 seconds</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2026-02-18T12:31:21.252010" elapsed="0.000335"/>
+<status status="PASS" start="2026-02-18T15:11:38.238764" elapsed="6.138126"/>
 </kw>
-<status status="PASS" start="2026-02-18T12:31:14.343859" elapsed="6.908600"/>
-</kw>
-<test id="s1-t1" name="Run Data Driven Tests From CSV" line="14">
+<test id="s1-t1" name="Run Data Driven Tests For All Products" line="14">
 <kw name="Get File" owner="OperatingSystem">
-<msg time="2026-02-18T12:31:21.256470" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\Wipro_Capstone_Toolshop\test_data.csv"&gt;C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\Wipro_Capstone_Toolshop\test_data.csv&lt;/a&gt;'.</msg>
-<msg time="2026-02-18T12:31:21.261435" level="INFO">${file_content} = email,password,product
+<msg time="2026-02-18T15:11:44.379434" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\Wipro_Capstone_Toolshop\robot_data.csv"&gt;C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\Wipro_Capstone_Toolshop\robot_data.csv&lt;/a&gt;'.</msg>
+<msg time="2026-02-18T15:11:44.385027" level="INFO">${file_content} = email,password,product
 customer@practicesoftwaretesting.com,welcome01,Pliers
 customer@practicesoftwaretesting.com,welcome01,Hammer
 customer@practicesoftwaretesting.com,welcome01,Screwdriver
@@ -36,1119 +31,1034 @@ customer@p...</msg>
 <var>${file_content}</var>
 <arg>${CSV_PATH}</arg>
 <doc>Returns the contents of a specified file.</doc>
-<status status="PASS" start="2026-02-18T12:31:21.256108" elapsed="0.005391"/>
+<status status="PASS" start="2026-02-18T15:11:44.379131" elapsed="0.005961"/>
 </kw>
 <kw name="Split To Lines" owner="String">
-<msg time="2026-02-18T12:31:21.351414" level="INFO">5 lines returned.</msg>
-<msg time="2026-02-18T12:31:21.351602" level="INFO">@{lines} = [ customer@practicesoftwaretesting.com,welcome01,Pliers | customer@practicesoftwaretesting.com,welcome01,Hammer | customer@practicesoftwaretesting.com,welcome01,Screwdriver | customer@practicesoftware...</msg>
+<msg time="2026-02-18T15:11:44.386342" level="INFO">5 lines returned.</msg>
+<msg time="2026-02-18T15:11:44.386509" level="INFO">@{lines} = [ customer@practicesoftwaretesting.com,welcome01,Pliers | customer@practicesoftwaretesting.com,welcome01,Hammer | customer@practicesoftwaretesting.com,welcome01,Screwdriver | customer@practicesoftware...</msg>
 <var>@{lines}</var>
 <arg>${file_content}</arg>
 <arg>1</arg>
 <doc>Splits the given string to lines.</doc>
-<status status="PASS" start="2026-02-18T12:31:21.350820" elapsed="0.000831"/>
+<status status="PASS" start="2026-02-18T15:11:44.385908" elapsed="0.000642"/>
 </kw>
 <for flavor="IN">
 <iter>
 <kw name="Split String" owner="String">
-<msg time="2026-02-18T12:31:21.444891" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Pliers ]</msg>
+<msg time="2026-02-18T15:11:44.388153" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Pliers ]</msg>
 <var>@{data}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2026-02-18T12:31:21.425379" elapsed="0.019574"/>
+<status status="PASS" start="2026-02-18T15:11:44.387837" elapsed="0.000354"/>
 </kw>
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Data Driven Toolshop Flow">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:21.466922" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
+<msg time="2026-02-18T15:11:44.391031" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-02-18T12:31:21.466577" elapsed="0.937040"/>
+<status status="PASS" start="2026-02-18T15:11:44.390866" elapsed="0.414838"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-in"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:22.403915" elapsed="1.134071"/>
+<status status="PASS" start="2026-02-18T15:11:44.805967" elapsed="0.076764"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:23.538738" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
+<msg time="2026-02-18T15:11:44.883423" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
 <arg>css:[data-test="nav-sign-in"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:23.538235" elapsed="0.714327"/>
+<status status="PASS" start="2026-02-18T15:11:44.883033" elapsed="0.110151"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:email</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:24.253070" elapsed="1.898674"/>
+<status status="PASS" start="2026-02-18T15:11:44.993802" elapsed="0.259340"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:11:45.263951" level="INFO">Current page contains element 'id:email'.</msg>
+<arg>id:email</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:11:45.253413" elapsed="0.010694"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:26.152219" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
+<msg time="2026-02-18T15:11:45.264615" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
 <arg>id:email</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:26.151963" elapsed="2.497469"/>
+<status status="PASS" start="2026-02-18T15:11:45.264317" elapsed="0.215384"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:28.650095" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
+<msg time="2026-02-18T15:11:45.482677" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
 <arg>id:password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:28.649731" elapsed="1.381319"/>
+<status status="PASS" start="2026-02-18T15:11:45.479933" elapsed="0.110268"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:30.031704" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
+<msg time="2026-02-18T15:11:45.590523" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
 <arg>css:[data-test="login-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:30.031437" elapsed="1.851137"/>
+<status status="PASS" start="2026-02-18T15:11:45.590356" elapsed="0.108367"/>
 </kw>
 <kw name="Wait Until Location Contains" owner="SeleniumLibrary">
 <arg>account</arg>
+<arg>20s</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2026-02-18T12:31:31.882862" elapsed="1.714294"/>
+<status status="PASS" start="2026-02-18T15:11:45.698940" elapsed="2.598409"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-18T15:11:48.297537" elapsed="1.759009"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:11:50.080568" level="INFO">Current page contains element 'css:[data-test="nav-menu"]'.</msg>
+<arg>css:[data-test="nav-menu"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:11:50.056798" elapsed="0.023911"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:33.597730" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
+<msg time="2026-02-18T15:11:50.081206" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
 <arg>css:.navbar-brand</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:33.597423" elapsed="0.920614"/>
+<status status="PASS" start="2026-02-18T15:11:50.080949" elapsed="0.509389"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:search-query</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:34.518297" elapsed="0.633986"/>
+<status status="PASS" start="2026-02-18T15:11:50.590586" elapsed="0.065103"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:35.152824" level="INFO">Typing text 'Pliers' into text field 'id:search-query'.</msg>
+<msg time="2026-02-18T15:11:50.656209" level="INFO">Typing text 'Pliers' into text field 'id:search-query'.</msg>
 <arg>id:search-query</arg>
 <arg>${product}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:35.152533" elapsed="1.060992"/>
+<status status="PASS" start="2026-02-18T15:11:50.655869" elapsed="0.140860"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:36.213880" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
+<msg time="2026-02-18T15:11:50.797279" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
 <arg>css:[data-test="search-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:36.213707" elapsed="1.694808"/>
+<status status="PASS" start="2026-02-18T15:11:50.796980" elapsed="0.123620"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-18T12:31:39.909998" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
+<msg time="2026-02-18T15:11:53.921895" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-18T12:31:37.908835" elapsed="2.001407"/>
+<status status="PASS" start="2026-02-18T15:11:50.920795" elapsed="3.001332"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:a.card</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:39.910928" elapsed="0.633610"/>
+<status status="PASS" start="2026-02-18T15:11:53.922299" elapsed="0.019175"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:40.545116" level="INFO">Clicking element 'css:a.card'.</msg>
+<msg time="2026-02-18T15:11:53.941993" level="INFO">Clicking element 'css:a.card'.</msg>
 <arg>css:a.card</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:40.544828" elapsed="0.693513"/>
+<status status="PASS" start="2026-02-18T15:11:53.941808" elapsed="0.129839"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:btn-add-to-cart</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:41.240952" elapsed="2.687428"/>
+<status status="PASS" start="2026-02-18T15:11:54.071896" elapsed="1.112460"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:43.929785" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
+<msg time="2026-02-18T15:11:55.184860" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
 <arg>id:btn-add-to-cart</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:43.929131" elapsed="1.802361"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:51.611505" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-12.png"&gt;&lt;img src="selenium-screenshot-12.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-18T12:31:51.611839" level="FAIL">Element 'css:.toast-body' not visible after 5 seconds.</msg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-02-18T12:31:45.732339" elapsed="5.886652">Element 'css:.toast-body' not visible after 5 seconds.</status>
-</kw>
-<arg>Wait Until Element Is Visible</arg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:31:45.731757" elapsed="5.887351"/>
+<status status="PASS" start="2026-02-18T15:11:55.184598" elapsed="0.271124"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:51.619765" elapsed="0.310016"/>
+<status status="PASS" start="2026-02-18T15:11:55.456506" elapsed="0.065014"/>
 </kw>
 <arg>Wait Until Element Is Not Visible</arg>
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:31:51.619267" elapsed="0.310706"/>
+<status status="PASS" start="2026-02-18T15:11:55.455980" elapsed="0.065667"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-cart"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:51.930181" elapsed="0.648722"/>
+<status status="PASS" start="2026-02-18T15:11:55.521845" elapsed="3.088782"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:52.579477" level="INFO">Executing JavaScript:
+<msg time="2026-02-18T15:11:58.611480" level="INFO">Executing JavaScript:
 document.querySelector('a[data-test="nav-cart"]').click()
 Without any arguments.</msg>
 <arg>document.querySelector('a[data-test="nav-cart"]').click()</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:31:52.579097" elapsed="0.316768"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:[data-test="product-quantity"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:52.896279" elapsed="2.183976"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:55.081259" level="INFO">Typing text '2' into text field 'css:[data-test="product-quantity"]'.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>2</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:31:55.080725" elapsed="1.078303"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:56.159669" level="INFO">Sending key(s) ('ENTER',) to css:[data-test="product-quantity"] element.</msg>
-<msg time="2026-02-18T12:31:57.100257" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2026-02-18T12:31:57.100390" level="INFO">Releasing special key ENTER.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-02-18T12:31:56.159293" elapsed="1.253769"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:.btn-danger</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:57.413337" elapsed="0.632385"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:31:58.046883" level="INFO">Executing JavaScript:
-document.querySelector('.btn-danger').click()
-Without any arguments.</msg>
-<arg>document.querySelector('.btn-danger').click()</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:31:58.046323" elapsed="0.368870"/>
-</kw>
-<kw name="Reload Page" owner="SeleniumLibrary">
-<doc>Simulates user reloading page.</doc>
-<status status="PASS" start="2026-02-18T12:31:58.415630" elapsed="0.851377"/>
+<status status="PASS" start="2026-02-18T15:11:58.610917" elapsed="0.009193"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:31:59.267263" elapsed="2.731385"/>
+<status status="PASS" start="2026-02-18T15:11:58.620402" elapsed="0.014554"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:01.999307" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
+<msg time="2026-02-18T15:11:58.635282" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
 <arg>css:[data-test="nav-menu"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:01.999006" elapsed="0.682494"/>
+<status status="PASS" start="2026-02-18T15:11:58.635120" elapsed="0.109181"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-out"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:02.681773" elapsed="0.670003"/>
+<status status="PASS" start="2026-02-18T15:11:58.744575" elapsed="0.020782"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:03.352331" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
+<msg time="2026-02-18T15:11:58.765897" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
 <arg>css:[data-test="nav-sign-out"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:03.352039" elapsed="2.129501"/>
+<status status="PASS" start="2026-02-18T15:11:58.765614" elapsed="0.867657"/>
 </kw>
 <arg>${data[0]}</arg>
 <arg>${data[1]}</arg>
 <arg>${data[2]}</arg>
-<status status="PASS" start="2026-02-18T12:31:21.445414" elapsed="44.036464"/>
+<status status="PASS" start="2026-02-18T15:11:44.389325" elapsed="15.244201"/>
+</kw>
+<arg>'${line}' != ''</arg>
+<arg>Data Driven Toolshop Flow</arg>
+<arg>${data[0]}</arg>
+<arg>${data[1]}</arg>
+<arg>${data[2]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-18T15:11:44.388381" elapsed="15.245347"/>
 </kw>
 <var name="${line}">customer@practicesoftwaretesting.com,welcome01,Pliers</var>
-<status status="PASS" start="2026-02-18T12:31:21.425228" elapsed="44.056766"/>
+<status status="PASS" start="2026-02-18T15:11:44.387655" elapsed="15.246144"/>
 </iter>
 <iter>
 <kw name="Split String" owner="String">
-<msg time="2026-02-18T12:32:05.483219" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Hammer ]</msg>
+<msg time="2026-02-18T15:11:59.634652" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Hammer ]</msg>
 <var>@{data}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2026-02-18T12:32:05.482755" elapsed="0.000520"/>
+<status status="PASS" start="2026-02-18T15:11:59.634243" elapsed="0.000469"/>
 </kw>
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Data Driven Toolshop Flow">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:05.488830" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
+<msg time="2026-02-18T15:11:59.636613" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-02-18T12:32:05.487071" elapsed="0.525337"/>
+<status status="PASS" start="2026-02-18T15:11:59.636495" elapsed="0.178693"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-in"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:06.012598" elapsed="0.623711"/>
+<status status="PASS" start="2026-02-18T15:11:59.815480" elapsed="0.041439"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:06.636657" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
+<msg time="2026-02-18T15:11:59.857617" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
 <arg>css:[data-test="nav-sign-in"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:06.636488" elapsed="0.715071"/>
+<status status="PASS" start="2026-02-18T15:11:59.857306" elapsed="0.094949"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:email</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:07.352222" elapsed="0.629743"/>
+<status status="PASS" start="2026-02-18T15:11:59.952521" elapsed="0.031782"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:11:59.989758" level="INFO">Current page contains element 'id:email'.</msg>
+<arg>id:email</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:11:59.984464" elapsed="0.005383"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:07.982827" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
+<msg time="2026-02-18T15:11:59.990172" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
 <arg>id:email</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:07.982276" elapsed="1.107727"/>
+<status status="PASS" start="2026-02-18T15:11:59.989983" elapsed="0.189547"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:09.091732" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
+<msg time="2026-02-18T15:12:00.180108" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
 <arg>id:password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:09.091197" elapsed="1.055720"/>
+<status status="PASS" start="2026-02-18T15:12:00.179763" elapsed="0.081589"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:10.147402" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
+<msg time="2026-02-18T15:12:00.261707" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
 <arg>css:[data-test="login-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:10.147160" elapsed="1.180842"/>
+<status status="PASS" start="2026-02-18T15:12:00.261529" elapsed="0.073859"/>
 </kw>
 <kw name="Wait Until Location Contains" owner="SeleniumLibrary">
 <arg>account</arg>
+<arg>20s</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2026-02-18T12:32:11.328231" elapsed="1.332180"/>
+<status status="PASS" start="2026-02-18T15:12:00.335535" elapsed="3.461836"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-18T15:12:03.797601" elapsed="4.513935"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:12:08.332341" level="INFO">Current page contains element 'css:[data-test="nav-menu"]'.</msg>
+<arg>css:[data-test="nav-menu"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:12:08.311788" elapsed="0.020659"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:12.661273" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
+<msg time="2026-02-18T15:12:08.332736" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
 <arg>css:.navbar-brand</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:12.660780" elapsed="0.866635"/>
+<status status="PASS" start="2026-02-18T15:12:08.332588" elapsed="0.582519"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:search-query</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:13.527909" elapsed="0.633247"/>
+<status status="PASS" start="2026-02-18T15:12:08.915274" elapsed="0.019176"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:14.161863" level="INFO">Typing text 'Hammer' into text field 'id:search-query'.</msg>
+<msg time="2026-02-18T15:12:08.934997" level="INFO">Typing text 'Hammer' into text field 'id:search-query'.</msg>
 <arg>id:search-query</arg>
 <arg>${product}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:14.161496" elapsed="1.007281"/>
+<status status="PASS" start="2026-02-18T15:12:08.934687" elapsed="0.114987"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:15.169560" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
+<msg time="2026-02-18T15:12:09.050205" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
 <arg>css:[data-test="search-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:15.169170" elapsed="1.632429"/>
+<status status="PASS" start="2026-02-18T15:12:09.049926" elapsed="0.143419"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-18T12:32:18.802749" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
+<msg time="2026-02-18T15:12:12.195091" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-18T12:32:16.801869" elapsed="2.001194"/>
+<status status="PASS" start="2026-02-18T15:12:09.193687" elapsed="3.001599"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:a.card</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:18.805332" elapsed="0.637626"/>
+<status status="PASS" start="2026-02-18T15:12:12.195624" elapsed="0.015431"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:19.444660" level="INFO">Clicking element 'css:a.card'.</msg>
+<msg time="2026-02-18T15:12:12.211476" level="INFO">Clicking element 'css:a.card'.</msg>
 <arg>css:a.card</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:19.444031" elapsed="0.748258"/>
+<status status="PASS" start="2026-02-18T15:12:12.211292" elapsed="0.101015"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:btn-add-to-cart</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:20.192668" elapsed="1.667475"/>
+<status status="PASS" start="2026-02-18T15:12:12.312572" elapsed="1.567567"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:21.860993" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
+<msg time="2026-02-18T15:12:13.880510" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
 <arg>id:btn-add-to-cart</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:21.860600" elapsed="1.635262"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:29.247297" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-18T12:32:29.247593" level="FAIL">Element 'css:.toast-body' not visible after 5 seconds.</msg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-02-18T12:32:23.497171" elapsed="5.752638">Element 'css:.toast-body' not visible after 5 seconds.</status>
-</kw>
-<arg>Wait Until Element Is Visible</arg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:32:23.496274" elapsed="5.753724"/>
+<status status="PASS" start="2026-02-18T15:12:13.880328" elapsed="0.089908"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:29.250801" elapsed="0.310966"/>
+<status status="PASS" start="2026-02-18T15:12:13.970690" elapsed="0.015686"/>
 </kw>
 <arg>Wait Until Element Is Not Visible</arg>
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:32:29.250243" elapsed="0.311738"/>
+<status status="PASS" start="2026-02-18T15:12:13.970400" elapsed="0.016080"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-cart"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:29.562342" elapsed="0.637597"/>
+<status status="PASS" start="2026-02-18T15:12:13.986602" elapsed="0.014997"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:30.201386" level="INFO">Executing JavaScript:
+<msg time="2026-02-18T15:12:14.002124" level="INFO">Executing JavaScript:
 document.querySelector('a[data-test="nav-cart"]').click()
 Without any arguments.</msg>
 <arg>document.querySelector('a[data-test="nav-cart"]').click()</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:32:30.200419" elapsed="0.331324"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:[data-test="product-quantity"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:30.531962" elapsed="2.197631"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:32.730859" level="INFO">Typing text '2' into text field 'css:[data-test="product-quantity"]'.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>2</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:32.729880" elapsed="2.261301"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:34.992137" level="INFO">Sending key(s) ('ENTER',) to css:[data-test="product-quantity"] element.</msg>
-<msg time="2026-02-18T12:32:35.901809" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2026-02-18T12:32:35.902022" level="INFO">Releasing special key ENTER.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-02-18T12:32:34.991638" elapsed="1.233916"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:.btn-danger</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:36.226196" elapsed="0.633929"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:36.861004" level="INFO">Executing JavaScript:
-document.querySelector('.btn-danger').click()
-Without any arguments.</msg>
-<arg>document.querySelector('.btn-danger').click()</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:32:36.860296" elapsed="0.314786"/>
-</kw>
-<kw name="Reload Page" owner="SeleniumLibrary">
-<doc>Simulates user reloading page.</doc>
-<status status="PASS" start="2026-02-18T12:32:37.175545" elapsed="0.788894"/>
+<status status="PASS" start="2026-02-18T15:12:14.001751" elapsed="0.010402"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:37.964861" elapsed="2.193849"/>
+<status status="PASS" start="2026-02-18T15:12:14.012321" elapsed="0.026261"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:40.159489" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
+<msg time="2026-02-18T15:12:14.039041" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
 <arg>css:[data-test="nav-menu"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:40.159069" elapsed="0.668349"/>
+<status status="PASS" start="2026-02-18T15:12:14.038810" elapsed="0.083889"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-out"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:40.827831" elapsed="0.633947"/>
+<status status="PASS" start="2026-02-18T15:12:14.122844" elapsed="0.081420"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:41.462824" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
+<msg time="2026-02-18T15:12:14.204941" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
 <arg>css:[data-test="nav-sign-out"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:41.462212" elapsed="1.471817"/>
+<status status="PASS" start="2026-02-18T15:12:14.204527" elapsed="0.521354"/>
 </kw>
 <arg>${data[0]}</arg>
 <arg>${data[1]}</arg>
 <arg>${data[2]}</arg>
-<status status="PASS" start="2026-02-18T12:32:05.483879" elapsed="37.450342"/>
+<status status="PASS" start="2026-02-18T15:11:59.635552" elapsed="15.090497"/>
+</kw>
+<arg>'${line}' != ''</arg>
+<arg>Data Driven Toolshop Flow</arg>
+<arg>${data[0]}</arg>
+<arg>${data[1]}</arg>
+<arg>${data[2]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-18T15:11:59.634945" elapsed="15.091194"/>
 </kw>
 <var name="${line}">customer@practicesoftwaretesting.com,welcome01,Hammer</var>
-<status status="PASS" start="2026-02-18T12:32:05.482481" elapsed="37.451814"/>
+<status status="PASS" start="2026-02-18T15:11:59.634070" elapsed="15.092135"/>
 </iter>
 <iter>
 <kw name="Split String" owner="String">
-<msg time="2026-02-18T12:32:42.935024" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Screwdriver ]</msg>
+<msg time="2026-02-18T15:12:14.726766" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Screwdriver ]</msg>
 <var>@{data}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2026-02-18T12:32:42.934691" elapsed="0.000379"/>
+<status status="PASS" start="2026-02-18T15:12:14.726504" elapsed="0.000311"/>
 </kw>
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Data Driven Toolshop Flow">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:42.939019" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
+<msg time="2026-02-18T15:12:14.731699" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-02-18T12:32:42.938827" elapsed="0.539770"/>
+<status status="PASS" start="2026-02-18T15:12:14.731427" elapsed="0.249356"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-in"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:43.478891" elapsed="0.670750"/>
+<status status="PASS" start="2026-02-18T15:12:14.980974" elapsed="0.039782"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:44.150013" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
+<msg time="2026-02-18T15:12:15.021056" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
 <arg>css:[data-test="nav-sign-in"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:44.149839" elapsed="0.720329"/>
+<status status="PASS" start="2026-02-18T15:12:15.020901" elapsed="0.098373"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:email</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:44.872189" elapsed="0.634834"/>
+<status status="PASS" start="2026-02-18T15:12:15.119422" elapsed="0.034508"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:12:15.180512" level="INFO">Current page contains element 'id:email'.</msg>
+<arg>id:email</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:12:15.154084" elapsed="0.026509"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:45.508374" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
+<msg time="2026-02-18T15:12:15.180983" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
 <arg>id:email</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:45.507626" elapsed="1.138914"/>
+<status status="PASS" start="2026-02-18T15:12:15.180789" elapsed="0.124615"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:46.647679" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
+<msg time="2026-02-18T15:12:15.307421" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
 <arg>id:password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:46.647063" elapsed="1.031134"/>
+<status status="PASS" start="2026-02-18T15:12:15.305805" elapsed="0.100250"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:47.679415" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
+<msg time="2026-02-18T15:12:15.406613" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
 <arg>css:[data-test="login-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:47.678794" elapsed="1.002947"/>
+<status status="PASS" start="2026-02-18T15:12:15.406202" elapsed="0.063398"/>
 </kw>
 <kw name="Wait Until Location Contains" owner="SeleniumLibrary">
 <arg>account</arg>
+<arg>20s</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2026-02-18T12:32:48.682177" elapsed="1.342426"/>
+<status status="PASS" start="2026-02-18T15:12:15.469778" elapsed="2.750972"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-18T15:12:18.221018" elapsed="5.043616"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:12:23.296616" level="INFO">Current page contains element 'css:[data-test="nav-menu"]'.</msg>
+<arg>css:[data-test="nav-menu"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:12:23.265196" elapsed="0.031621"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:50.025465" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
+<msg time="2026-02-18T15:12:23.297608" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
 <arg>css:.navbar-brand</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:50.025020" elapsed="0.880370"/>
+<status status="PASS" start="2026-02-18T15:12:23.297153" elapsed="0.306243"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:search-query</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:50.906003" elapsed="0.626434"/>
+<status status="PASS" start="2026-02-18T15:12:23.603695" elapsed="0.078209"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:51.532971" level="INFO">Typing text 'Screwdriver' into text field 'id:search-query'.</msg>
+<msg time="2026-02-18T15:12:23.682269" level="INFO">Typing text 'Screwdriver' into text field 'id:search-query'.</msg>
 <arg>id:search-query</arg>
 <arg>${product}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:51.532666" elapsed="1.047393"/>
+<status status="PASS" start="2026-02-18T15:12:23.682069" elapsed="0.110245"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:52.580817" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
+<msg time="2026-02-18T15:12:23.793817" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
 <arg>css:[data-test="search-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:52.580433" elapsed="1.614201"/>
+<status status="PASS" start="2026-02-18T15:12:23.792641" elapsed="0.104459"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-18T12:32:56.196734" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
+<msg time="2026-02-18T15:12:26.898966" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-18T12:32:54.195118" elapsed="2.001738"/>
+<status status="PASS" start="2026-02-18T15:12:23.897345" elapsed="3.002729"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:a.card</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:56.197008" elapsed="0.623072"/>
+<status status="PASS" start="2026-02-18T15:12:26.900650" elapsed="0.031406"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:56.821578" level="INFO">Clicking element 'css:a.card'.</msg>
+<msg time="2026-02-18T15:12:26.932452" level="INFO">Clicking element 'css:a.card'.</msg>
 <arg>css:a.card</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:56.820957" elapsed="0.687192"/>
+<status status="PASS" start="2026-02-18T15:12:26.932266" elapsed="0.123030"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:btn-add-to-cart</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:32:57.508626" elapsed="2.183503"/>
+<status status="PASS" start="2026-02-18T15:12:27.055494" elapsed="1.548282"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:32:59.693094" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
+<msg time="2026-02-18T15:12:28.604512" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
 <arg>id:btn-add-to-cart</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:32:59.692589" elapsed="1.626124"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:07.012364" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-14.png"&gt;&lt;img src="selenium-screenshot-14.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-18T12:33:07.012829" level="FAIL">Element 'css:.toast-body' not visible after 5 seconds.</msg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-02-18T12:33:01.322879" elapsed="5.692044">Element 'css:.toast-body' not visible after 5 seconds.</status>
-</kw>
-<arg>Wait Until Element Is Visible</arg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:33:01.321253" elapsed="5.693945"/>
+<status status="PASS" start="2026-02-18T15:12:28.604166" elapsed="0.128589"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:07.016544" elapsed="0.315648"/>
+<status status="PASS" start="2026-02-18T15:12:28.733566" elapsed="0.033348"/>
 </kw>
 <arg>Wait Until Element Is Not Visible</arg>
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:33:07.015516" elapsed="0.316994"/>
+<status status="PASS" start="2026-02-18T15:12:28.733015" elapsed="0.034048"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-cart"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:07.332749" elapsed="0.645269"/>
+<status status="PASS" start="2026-02-18T15:12:28.767250" elapsed="0.018657"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:07.979848" level="INFO">Executing JavaScript:
+<msg time="2026-02-18T15:12:28.786583" level="INFO">Executing JavaScript:
 document.querySelector('a[data-test="nav-cart"]').click()
 Without any arguments.</msg>
 <arg>document.querySelector('a[data-test="nav-cart"]').click()</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:33:07.978507" elapsed="0.336407"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:[data-test="product-quantity"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:08.315209" elapsed="1.684563"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:10.002485" level="INFO">Typing text '2' into text field 'css:[data-test="product-quantity"]'.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>2</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:10.000331" elapsed="1.042867"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:11.044521" level="INFO">Sending key(s) ('ENTER',) to css:[data-test="product-quantity"] element.</msg>
-<msg time="2026-02-18T12:33:11.948879" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2026-02-18T12:33:11.949069" level="INFO">Releasing special key ENTER.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-02-18T12:33:11.043654" elapsed="1.225958"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:.btn-danger</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:12.270443" elapsed="0.670846"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:12.942830" level="INFO">Executing JavaScript:
-document.querySelector('.btn-danger').click()
-Without any arguments.</msg>
-<arg>document.querySelector('.btn-danger').click()</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:33:12.941801" elapsed="0.323417"/>
-</kw>
-<kw name="Reload Page" owner="SeleniumLibrary">
-<doc>Simulates user reloading page.</doc>
-<status status="PASS" start="2026-02-18T12:33:13.265622" elapsed="1.211545"/>
+<status status="PASS" start="2026-02-18T15:12:28.786065" elapsed="0.011539"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:14.477808" elapsed="2.181946"/>
+<status status="PASS" start="2026-02-18T15:12:28.797875" elapsed="0.056636"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:16.660347" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
+<msg time="2026-02-18T15:12:28.854960" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
 <arg>css:[data-test="nav-menu"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:16.660013" elapsed="0.696846"/>
+<status status="PASS" start="2026-02-18T15:12:28.854721" elapsed="0.065279"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-out"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:17.357138" elapsed="0.642269"/>
+<status status="PASS" start="2026-02-18T15:12:28.920322" elapsed="0.015309"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:18.000331" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
+<msg time="2026-02-18T15:12:28.935983" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
 <arg>css:[data-test="nav-sign-out"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:17.999961" elapsed="1.829311"/>
+<status status="PASS" start="2026-02-18T15:12:28.935788" elapsed="0.519504"/>
 </kw>
 <arg>${data[0]}</arg>
 <arg>${data[1]}</arg>
 <arg>${data[2]}</arg>
-<status status="PASS" start="2026-02-18T12:32:42.935695" elapsed="36.894004"/>
+<status status="PASS" start="2026-02-18T15:12:14.727631" elapsed="14.727854"/>
+</kw>
+<arg>'${line}' != ''</arg>
+<arg>Data Driven Toolshop Flow</arg>
+<arg>${data[0]}</arg>
+<arg>${data[1]}</arg>
+<arg>${data[2]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-18T15:12:14.726993" elapsed="14.728591"/>
 </kw>
 <var name="${line}">customer@practicesoftwaretesting.com,welcome01,Screwdriver</var>
-<status status="PASS" start="2026-02-18T12:32:42.934528" elapsed="36.895392"/>
+<status status="PASS" start="2026-02-18T15:12:14.726382" elapsed="14.729406"/>
 </iter>
 <iter>
 <kw name="Split String" owner="String">
-<msg time="2026-02-18T12:33:19.833000" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Bolt Cutters ]</msg>
+<msg time="2026-02-18T15:12:29.457226" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Bolt Cutters ]</msg>
 <var>@{data}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2026-02-18T12:33:19.830915" elapsed="0.002225"/>
+<status status="PASS" start="2026-02-18T15:12:29.456217" elapsed="0.001083"/>
 </kw>
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Data Driven Toolshop Flow">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:19.840800" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
+<msg time="2026-02-18T15:12:29.462163" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-02-18T12:33:19.840562" elapsed="0.507213"/>
+<status status="PASS" start="2026-02-18T15:12:29.462009" elapsed="0.205008"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-in"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:20.348000" elapsed="0.626600"/>
+<status status="PASS" start="2026-02-18T15:12:29.667284" elapsed="0.069974"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:20.975448" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
+<msg time="2026-02-18T15:12:29.737686" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
 <arg>css:[data-test="nav-sign-in"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:20.974994" elapsed="0.685231"/>
+<status status="PASS" start="2026-02-18T15:12:29.737461" elapsed="0.080189"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:email</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:21.660628" elapsed="0.642801"/>
+<status status="PASS" start="2026-02-18T15:12:29.817899" elapsed="0.033710"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:12:29.863379" level="INFO">Current page contains element 'id:email'.</msg>
+<arg>id:email</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:12:29.851789" elapsed="0.011678"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:22.304645" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
+<msg time="2026-02-18T15:12:29.863834" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
 <arg>id:email</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:22.303848" elapsed="1.216488"/>
+<status status="PASS" start="2026-02-18T15:12:29.863623" elapsed="0.157867"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:23.522364" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
+<msg time="2026-02-18T15:12:30.021960" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
 <arg>id:password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:23.521045" elapsed="1.009368"/>
+<status status="PASS" start="2026-02-18T15:12:30.021737" elapsed="0.094476"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:24.531229" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
+<msg time="2026-02-18T15:12:30.116819" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
 <arg>css:[data-test="login-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:24.530813" elapsed="1.017081"/>
+<status status="PASS" start="2026-02-18T15:12:30.116481" elapsed="0.094929"/>
 </kw>
 <kw name="Wait Until Location Contains" owner="SeleniumLibrary">
 <arg>account</arg>
+<arg>20s</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2026-02-18T12:33:25.548485" elapsed="1.848275"/>
+<status status="PASS" start="2026-02-18T15:12:30.211598" elapsed="2.439697"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-18T15:12:32.651527" elapsed="4.997154"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:12:37.654618" level="INFO">Current page contains element 'css:[data-test="nav-menu"]'.</msg>
+<arg>css:[data-test="nav-menu"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:12:37.648899" elapsed="0.005853"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:27.397932" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
+<msg time="2026-02-18T15:12:37.655180" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
 <arg>css:.navbar-brand</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:27.397331" elapsed="0.874756"/>
+<status status="PASS" start="2026-02-18T15:12:37.654934" elapsed="0.275994"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:search-query</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:28.272404" elapsed="0.634670"/>
+<status status="PASS" start="2026-02-18T15:12:37.931176" elapsed="0.034103"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:28.908688" level="INFO">Typing text 'Bolt Cutters' into text field 'id:search-query'.</msg>
+<msg time="2026-02-18T15:12:37.965793" level="INFO">Typing text 'Bolt Cutters' into text field 'id:search-query'.</msg>
 <arg>id:search-query</arg>
 <arg>${product}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:28.908248" elapsed="1.205247"/>
+<status status="PASS" start="2026-02-18T15:12:37.965537" elapsed="0.171130"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:30.114824" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
+<msg time="2026-02-18T15:12:38.137583" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
 <arg>css:[data-test="search-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:30.114044" elapsed="1.626105"/>
+<status status="PASS" start="2026-02-18T15:12:38.137327" elapsed="0.257681"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-18T12:33:33.741590" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
+<msg time="2026-02-18T15:12:41.396482" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-18T12:33:31.740385" elapsed="2.001441"/>
+<status status="PASS" start="2026-02-18T15:12:38.395385" elapsed="3.001467"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:a.card</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:33.742046" elapsed="0.631576"/>
+<status status="PASS" start="2026-02-18T15:12:41.397349" elapsed="0.015142"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:34.376034" level="INFO">Clicking element 'css:a.card'.</msg>
+<msg time="2026-02-18T15:12:41.412865" level="INFO">Clicking element 'css:a.card'.</msg>
 <arg>css:a.card</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:34.374426" elapsed="0.716939"/>
+<status status="PASS" start="2026-02-18T15:12:41.412674" elapsed="0.084599"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:btn-add-to-cart</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:35.091537" elapsed="2.182918"/>
+<status status="PASS" start="2026-02-18T15:12:41.497735" elapsed="1.569315"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:37.275426" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
+<msg time="2026-02-18T15:12:43.067809" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
 <arg>id:btn-add-to-cart</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:37.274939" elapsed="1.635129"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:44.673417" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-15.png"&gt;&lt;img src="selenium-screenshot-15.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-18T12:33:44.673712" level="FAIL">Element 'css:.toast-body' not visible after 5 seconds.</msg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-02-18T12:33:38.911288" elapsed="5.764591">Element 'css:.toast-body' not visible after 5 seconds.</status>
-</kw>
-<arg>Wait Until Element Is Visible</arg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:33:38.910453" elapsed="5.765654"/>
+<status status="PASS" start="2026-02-18T15:12:43.067507" elapsed="0.136269"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:44.677949" elapsed="0.314239"/>
+<status status="PASS" start="2026-02-18T15:12:43.204718" elapsed="0.011727"/>
 </kw>
 <arg>Wait Until Element Is Not Visible</arg>
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:33:44.676541" elapsed="0.315892"/>
+<status status="PASS" start="2026-02-18T15:12:43.204046" elapsed="0.012487"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-cart"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:44.992758" elapsed="0.630508"/>
+<status status="PASS" start="2026-02-18T15:12:43.216648" elapsed="0.017045"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:45.624613" level="INFO">Executing JavaScript:
+<msg time="2026-02-18T15:12:43.234364" level="INFO">Executing JavaScript:
 document.querySelector('a[data-test="nav-cart"]').click()
 Without any arguments.</msg>
 <arg>document.querySelector('a[data-test="nav-cart"]').click()</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:33:45.623671" elapsed="0.318797"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:[data-test="product-quantity"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:45.942863" elapsed="1.682089"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:47.626396" level="INFO">Typing text '2' into text field 'css:[data-test="product-quantity"]'.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>2</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:47.625577" elapsed="1.324090"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:48.952059" level="INFO">Sending key(s) ('ENTER',) to css:[data-test="product-quantity"] element.</msg>
-<msg time="2026-02-18T12:33:49.861082" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2026-02-18T12:33:49.861260" level="INFO">Releasing special key ENTER.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-02-18T12:33:48.950667" elapsed="1.228109"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:.btn-danger</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:50.179150" elapsed="0.642834"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:50.823738" level="INFO">Executing JavaScript:
-document.querySelector('.btn-danger').click()
-Without any arguments.</msg>
-<arg>document.querySelector('.btn-danger').click()</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:33:50.822675" elapsed="0.321802"/>
-</kw>
-<kw name="Reload Page" owner="SeleniumLibrary">
-<doc>Simulates user reloading page.</doc>
-<status status="PASS" start="2026-02-18T12:33:51.144971" elapsed="0.764052"/>
+<status status="PASS" start="2026-02-18T15:12:43.233927" elapsed="0.008924"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:51.909641" elapsed="2.191468"/>
+<status status="PASS" start="2026-02-18T15:12:43.243112" elapsed="0.043088"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:54.103494" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
+<msg time="2026-02-18T15:12:43.286548" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
 <arg>css:[data-test="nav-menu"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:54.102368" elapsed="0.709843"/>
+<status status="PASS" start="2026-02-18T15:12:43.286357" elapsed="0.066403"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-out"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:54.813092" elapsed="0.639663"/>
+<status status="PASS" start="2026-02-18T15:12:43.352961" elapsed="0.016419"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:55.453559" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
+<msg time="2026-02-18T15:12:43.369760" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
 <arg>css:[data-test="nav-sign-out"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:55.453154" elapsed="1.159030"/>
+<status status="PASS" start="2026-02-18T15:12:43.369565" elapsed="0.983823"/>
 </kw>
 <arg>${data[0]}</arg>
 <arg>${data[1]}</arg>
 <arg>${data[2]}</arg>
-<status status="PASS" start="2026-02-18T12:33:19.835790" elapsed="36.776671"/>
+<status status="PASS" start="2026-02-18T15:12:29.460331" elapsed="14.893254"/>
+</kw>
+<arg>'${line}' != ''</arg>
+<arg>Data Driven Toolshop Flow</arg>
+<arg>${data[0]}</arg>
+<arg>${data[1]}</arg>
+<arg>${data[2]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-18T15:12:29.457777" elapsed="14.895918"/>
 </kw>
 <var name="${line}">customer@practicesoftwaretesting.com,welcome01,Bolt Cutters</var>
-<status status="PASS" start="2026-02-18T12:33:19.830437" elapsed="36.782227"/>
+<status status="PASS" start="2026-02-18T15:12:29.456050" elapsed="14.897716"/>
 </iter>
 <iter>
 <kw name="Split String" owner="String">
-<msg time="2026-02-18T12:33:56.614197" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Saw ]</msg>
+<msg time="2026-02-18T15:12:44.354574" level="INFO">@{data} = [ customer@practicesoftwaretesting.com | welcome01 | Saw ]</msg>
 <var>@{data}</var>
 <arg>${line}</arg>
 <arg>,</arg>
 <doc>Splits the ``string`` using ``separator`` as a delimiter string.</doc>
-<status status="PASS" start="2026-02-18T12:33:56.613606" elapsed="0.000931"/>
+<status status="PASS" start="2026-02-18T15:12:44.354199" elapsed="0.000461"/>
 </kw>
+<kw name="Run Keyword If" owner="BuiltIn">
 <kw name="Data Driven Toolshop Flow">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:56.622692" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
+<msg time="2026-02-18T15:12:44.366095" level="INFO">Opening url 'https://practicesoftwaretesting.com/'</msg>
 <arg>${URL}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2026-02-18T12:33:56.622327" elapsed="0.481520"/>
+<status status="PASS" start="2026-02-18T15:12:44.365870" elapsed="0.200766"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-in"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:57.104258" elapsed="0.623991"/>
+<status status="PASS" start="2026-02-18T15:12:44.566871" elapsed="0.032675"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:57.728835" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
+<msg time="2026-02-18T15:12:44.600242" level="INFO">Clicking element 'css:[data-test="nav-sign-in"]'.</msg>
 <arg>css:[data-test="nav-sign-in"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:57.728626" elapsed="0.668208"/>
+<status status="PASS" start="2026-02-18T15:12:44.599814" elapsed="0.069985"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:email</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:33:58.397244" elapsed="0.643504"/>
+<status status="PASS" start="2026-02-18T15:12:44.669945" elapsed="0.032020"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:12:44.730895" level="INFO">Current page contains element 'id:email'.</msg>
+<arg>id:email</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:12:44.702146" elapsed="0.028833"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:33:59.041509" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
+<msg time="2026-02-18T15:12:44.731351" level="INFO">Typing text 'customer@practicesoftwaretesting.com' into text field 'id:email'.</msg>
 <arg>id:email</arg>
 <arg>${email}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:33:59.041053" elapsed="1.105665"/>
+<status status="PASS" start="2026-02-18T15:12:44.731131" elapsed="0.146799"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:00.147691" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
+<msg time="2026-02-18T15:12:44.878411" level="INFO">Typing text 'welcome01' into text field 'id:password'.</msg>
 <arg>id:password</arg>
 <arg>${password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:00.147176" elapsed="1.030197"/>
+<status status="PASS" start="2026-02-18T15:12:44.878151" elapsed="0.090267"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:01.178192" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
+<msg time="2026-02-18T15:12:44.968736" level="INFO">Clicking button 'css:[data-test="login-submit"]'.</msg>
 <arg>css:[data-test="login-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:01.177770" elapsed="0.996507"/>
+<status status="PASS" start="2026-02-18T15:12:44.968572" elapsed="0.074144"/>
 </kw>
 <kw name="Wait Until Location Contains" owner="SeleniumLibrary">
 <arg>account</arg>
+<arg>20s</arg>
 <doc>Waits until the current URL contains ``expected``.</doc>
-<status status="PASS" start="2026-02-18T12:34:02.174711" elapsed="1.396953"/>
+<status status="PASS" start="2026-02-18T15:12:45.043089" elapsed="2.324318"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-02-18T15:12:47.367714" elapsed="4.164802"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-02-18T15:12:51.541885" level="INFO">Current page contains element 'css:[data-test="nav-menu"]'.</msg>
+<arg>css:[data-test="nav-menu"]</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-02-18T15:12:51.532793" elapsed="0.009170"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:03.572476" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
+<msg time="2026-02-18T15:12:51.542270" level="INFO">Clicking element 'css:.navbar-brand'.</msg>
 <arg>css:.navbar-brand</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:03.572067" elapsed="0.887392"/>
+<status status="PASS" start="2026-02-18T15:12:51.542114" elapsed="0.237003"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:search-query</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:34:04.460012" elapsed="0.624375"/>
+<status status="PASS" start="2026-02-18T15:12:51.779342" elapsed="0.024528"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:05.085061" level="INFO">Typing text 'Saw' into text field 'id:search-query'.</msg>
+<msg time="2026-02-18T15:12:51.804209" level="INFO">Typing text 'Saw' into text field 'id:search-query'.</msg>
 <arg>id:search-query</arg>
 <arg>${product}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:05.084691" elapsed="0.991701"/>
+<status status="PASS" start="2026-02-18T15:12:51.804019" elapsed="0.102620"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:06.077164" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
+<msg time="2026-02-18T15:12:51.907242" level="INFO">Clicking button 'css:[data-test="search-submit"]'.</msg>
 <arg>css:[data-test="search-submit"]</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:06.076773" elapsed="1.664098"/>
+<status status="PASS" start="2026-02-18T15:12:51.906915" elapsed="0.145399"/>
 </kw>
 <kw name="Sleep" owner="BuiltIn">
-<msg time="2026-02-18T12:34:09.744609" level="INFO">Slept 2 seconds.</msg>
-<arg>2s</arg>
+<msg time="2026-02-18T15:12:55.053199" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2026-02-18T12:34:07.741256" elapsed="2.004404"/>
+<status status="PASS" start="2026-02-18T15:12:52.052530" elapsed="3.000995"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:a.card</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:34:09.750515" elapsed="0.685910"/>
+<status status="PASS" start="2026-02-18T15:12:55.053761" elapsed="0.019152"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:10.437314" level="INFO">Clicking element 'css:a.card'.</msg>
+<msg time="2026-02-18T15:12:55.073255" level="INFO">Clicking element 'css:a.card'.</msg>
 <arg>css:a.card</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:10.436864" elapsed="0.716814"/>
+<status status="PASS" start="2026-02-18T15:12:55.073097" elapsed="0.089738"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>id:btn-add-to-cart</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:34:11.154076" elapsed="2.166353"/>
+<status status="PASS" start="2026-02-18T15:12:55.163112" elapsed="1.573702"/>
 </kw>
 <kw name="Click Button" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:13.321131" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
+<msg time="2026-02-18T15:12:56.737129" level="INFO">Clicking button 'id:btn-add-to-cart'.</msg>
 <arg>id:btn-add-to-cart</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:13.320796" elapsed="1.673932"/>
-</kw>
-<kw name="Run Keyword And Ignore Error" owner="BuiltIn">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:20.655561" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-16.png"&gt;&lt;img src="selenium-screenshot-16.png" width="800px"&gt;&lt;/a&gt;</msg>
-<msg time="2026-02-18T12:34:20.655920" level="FAIL">Element 'css:.toast-body' not visible after 5 seconds.</msg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="FAIL" start="2026-02-18T12:34:14.996042" elapsed="5.661913">Element 'css:.toast-body' not visible after 5 seconds.</status>
-</kw>
-<arg>Wait Until Element Is Visible</arg>
-<arg>css:.toast-body</arg>
-<arg>5s</arg>
-<doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:34:14.995158" elapsed="5.662897"/>
+<status status="PASS" start="2026-02-18T15:12:56.736964" elapsed="0.099307"/>
 </kw>
 <kw name="Run Keyword And Ignore Error" owner="BuiltIn">
 <kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2026-02-18T12:34:20.658946" elapsed="0.312058"/>
+<status status="PASS" start="2026-02-18T15:12:56.836907" elapsed="0.011520"/>
 </kw>
 <arg>Wait Until Element Is Not Visible</arg>
 <arg>css:.toast-body</arg>
 <arg>5s</arg>
 <doc>Runs the given keyword with the given arguments and ignores possible error.</doc>
-<status status="PASS" start="2026-02-18T12:34:20.658416" elapsed="0.312756"/>
+<status status="PASS" start="2026-02-18T15:12:56.836552" elapsed="0.011962"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-cart"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:34:20.971375" elapsed="0.623300"/>
+<status status="PASS" start="2026-02-18T15:12:56.848666" elapsed="0.018533"/>
 </kw>
 <kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:21.596293" level="INFO">Executing JavaScript:
+<msg time="2026-02-18T15:12:56.867756" level="INFO">Executing JavaScript:
 document.querySelector('a[data-test="nav-cart"]').click()
 Without any arguments.</msg>
 <arg>document.querySelector('a[data-test="nav-cart"]').click()</arg>
 <doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:34:21.595157" elapsed="0.350465"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:[data-test="product-quantity"]</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:34:21.946010" elapsed="1.694982"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:23.641814" level="INFO">Typing text '2' into text field 'css:[data-test="product-quantity"]'.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>2</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:23.641390" elapsed="1.038517"/>
-</kw>
-<kw name="Press Keys" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:24.687007" level="INFO">Sending key(s) ('ENTER',) to css:[data-test="product-quantity"] element.</msg>
-<msg time="2026-02-18T12:34:25.594144" level="INFO">Pressing special key ENTER to element.</msg>
-<msg time="2026-02-18T12:34:25.594322" level="INFO">Releasing special key ENTER.</msg>
-<arg>css:[data-test="product-quantity"]</arg>
-<arg>ENTER</arg>
-<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
-<status status="PASS" start="2026-02-18T12:34:24.680321" elapsed="1.237772"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>css:.btn-danger</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:34:25.918358" elapsed="0.636625"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:26.556283" level="INFO">Executing JavaScript:
-document.querySelector('.btn-danger').click()
-Without any arguments.</msg>
-<arg>document.querySelector('.btn-danger').click()</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2026-02-18T12:34:26.555416" elapsed="0.319686"/>
-</kw>
-<kw name="Reload Page" owner="SeleniumLibrary">
-<doc>Simulates user reloading page.</doc>
-<status status="PASS" start="2026-02-18T12:34:26.875505" elapsed="1.232308"/>
+<status status="PASS" start="2026-02-18T15:12:56.867379" elapsed="0.012493"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-menu"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:34:28.108241" elapsed="2.191679"/>
+<status status="PASS" start="2026-02-18T15:12:56.880028" elapsed="0.036588"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:30.301252" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
+<msg time="2026-02-18T15:12:56.916951" level="INFO">Clicking element 'css:[data-test="nav-menu"]'.</msg>
 <arg>css:[data-test="nav-menu"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:30.300774" elapsed="0.709459"/>
+<status status="PASS" start="2026-02-18T15:12:56.916771" elapsed="0.069342"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>css:[data-test="nav-sign-out"]</arg>
+<arg>20s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2026-02-18T12:34:31.010791" elapsed="0.641149"/>
+<status status="PASS" start="2026-02-18T15:12:56.986346" elapsed="0.024815"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2026-02-18T12:34:31.653376" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
+<msg time="2026-02-18T15:12:57.011566" level="INFO">Clicking element 'css:[data-test="nav-sign-out"]'.</msg>
 <arg>css:[data-test="nav-sign-out"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2026-02-18T12:34:31.652366" elapsed="1.152954"/>
+<status status="PASS" start="2026-02-18T15:12:57.011362" elapsed="0.840715"/>
 </kw>
 <arg>${data[0]}</arg>
 <arg>${data[1]}</arg>
 <arg>${data[2]}</arg>
-<status status="PASS" start="2026-02-18T12:33:56.615282" elapsed="36.190264"/>
+<status status="PASS" start="2026-02-18T15:12:44.358709" elapsed="13.493521"/>
+</kw>
+<arg>'${line}' != ''</arg>
+<arg>Data Driven Toolshop Flow</arg>
+<arg>${data[0]}</arg>
+<arg>${data[1]}</arg>
+<arg>${data[2]}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2026-02-18T15:12:44.357111" elapsed="13.495184"/>
 </kw>
 <var name="${line}">customer@practicesoftwaretesting.com,welcome01,Saw</var>
-<status status="PASS" start="2026-02-18T12:33:56.613213" elapsed="36.192407"/>
+<status status="PASS" start="2026-02-18T15:12:44.353980" elapsed="13.498364"/>
 </iter>
 <var>${line}</var>
 <value>@{lines}</value>
-<status status="PASS" start="2026-02-18T12:31:21.424911" elapsed="191.380786"/>
+<status status="PASS" start="2026-02-18T15:11:44.387238" elapsed="73.465156"/>
 </for>
-<status status="PASS" start="2026-02-18T12:31:21.252606" elapsed="191.553882"/>
+<status status="PASS" start="2026-02-18T15:11:44.377033" elapsed="73.476503"/>
 </test>
 <kw name="Close All Browsers" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes all open browsers and resets the browser cache.</doc>
-<status status="PASS" start="2026-02-18T12:34:32.812154" elapsed="3.292049"/>
+<status status="PASS" start="2026-02-18T15:12:57.862462" elapsed="2.292267"/>
 </kw>
-<status status="PASS" start="2026-02-18T12:31:13.952721" elapsed="202.151569"/>
+<status status="PASS" start="2026-02-18T15:11:37.815235" elapsed="82.339601"/>
 </suite>
 <statistics>
 <total>

@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
 
+
 class ToolShopPage(CommonOps):
     SIGN_IN_NAV = (By.CSS_SELECTOR, "a[data-test='nav-sign-in']")
     EMAIL_FIELD = (By.ID, "email")
@@ -22,14 +23,17 @@ class ToolShopPage(CommonOps):
 
     def login(self, email, password):
         self.click(self.SIGN_IN_NAV)
-        email_el = self.wait.until(EC.visibility_of_element_located(self.EMAIL_FIELD))
-        email_el.clear()
-        email_el.send_keys(email)
+        # Assert field is ready
+        email_input = self.wait.until(EC.visibility_of_element_located(self.EMAIL_FIELD))
+        email_input.clear()
+        email_input.send_keys(email)
         self.driver.find_element(*self.PASSWORD_FIELD).send_keys(password)
         self.click(self.LOGIN_BTN)
-        # ASSERT: Verify login success
+
+        # FIX: Wait specifically for the login to finish
         self.wait.until(EC.url_contains("account"))
-        assert "account" in self.driver.current_url, "Assertion Failed: Login redirect did not happen"
+        menu = self.wait.until(EC.element_to_be_clickable(self.USER_MENU))
+        assert menu.is_displayed(), "Login failed: User menu not found"
         self.click(self.HOME_BRAND)
 
     def search_and_add(self, item):
@@ -37,31 +41,31 @@ class ToolShopPage(CommonOps):
         search_box.clear()
         search_box.send_keys(item)
         self.click(self.SEARCH_BTN)
-        time.sleep(2)
-        # ASSERT: Verify product appears
+        time.sleep(2)  # Give the list time to filter
         product = self.wait.until(EC.visibility_of_element_located(self.PRODUCT_CARD))
-        assert product.is_displayed(), f"Assertion Failed: Product {item} not visible"
+        assert product.is_displayed(), f"Product {item} not found"
         product.click()
-        # ASSERT: Verify on product page
         add_btn = self.wait.until(EC.element_to_be_clickable(self.ADD_TO_CART))
-        assert add_btn.is_enabled(), "Assertion Failed: Add to Cart button not clickable"
         add_btn.click()
 
     def manage_cart(self):
-        nav_cart_btn = self.wait.until(EC.element_to_be_clickable(self.NAV_CART))
+        # Using JS click for the cart to avoid toast overlaps
+        nav_cart_btn = self.wait.until(EC.presence_of_element_located(self.NAV_CART))
         self.driver.execute_script("arguments[0].click();", nav_cart_btn)
-        # ASSERT: Verify Cart loaded
+
         qty_field = self.wait.until(EC.visibility_of_element_located(self.QTY_INPUT))
-        assert qty_field.is_displayed(), "Assertion Failed: Cart page did not load"
         qty_field.send_keys(Keys.CONTROL + "a")
         qty_field.send_keys(Keys.DELETE)
         qty_field.send_keys("2")
         qty_field.send_keys(Keys.ENTER)
+
         time.sleep(1)
-        self.driver.execute_script("arguments[0].click();", self.driver.find_element(*self.REMOVE_ITEM))
+        delete_btn = self.wait.until(EC.presence_of_element_located(self.REMOVE_ITEM))
+        self.driver.execute_script("arguments[0].click();", delete_btn)
 
     def logout_user(self):
         self.driver.refresh()
-        self.click(self.USER_MENU)
+        menu = self.wait.until(EC.element_to_be_clickable(self.USER_MENU))
+        menu.click()
         signout = self.wait.until(EC.element_to_be_clickable(self.SIGNOUT_OPTION))
         self.driver.execute_script("arguments[0].click();", signout)
