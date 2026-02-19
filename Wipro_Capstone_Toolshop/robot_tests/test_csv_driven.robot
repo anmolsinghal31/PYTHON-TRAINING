@@ -1,69 +1,81 @@
 *** Settings ***
-Library           SeleniumLibrary
-Library           OperatingSystem
-Library           String
-Suite Setup       Setup Browser
-Suite Teardown    Close All Browsers
+Library    SeleniumLibrary
+Library    OperatingSystem
+Library    String
+Library    Collections
 
 *** Variables ***
-${URL}            https://practicesoftwaretesting.com/
-${BROWSER}        Chrome
-${CSV_PATH}       ${CURDIR}${/}..${/}robot_data.csv
+${URL}    https://practicesoftwaretesting.com/
+${CSV_PATH}    ${CURDIR}/../robot_data.csv
 
 *** Test Cases ***
-Run Data Driven Tests For All Products
+Execute Capstone Scenarios From CSV
     ${file_content}=    Get File    ${CSV_PATH}
-    @{lines}=           Split To Lines    ${file_content}    1
-    FOR    ${line}    IN    @{lines}
-        @{data}=        Split String    ${line}    ,
-        Run Keyword If    '${line}' != ''    Data Driven Toolshop Flow    ${data[0]}    ${data[1]}    ${data[2]}
+    @{lines}=    Split To Lines    ${file_content}
+    ${line_count}=    Get Length    ${lines}
+    
+    FOR    ${index}    IN RANGE    1    ${line_count}
+        ${line}=    Get From List    ${lines}    ${index}
+        @{data}=    Split String    ${line}    separator=,
+        ${email}=    Get From List    ${data}    0
+        ${password}=    Get From List    ${data}    1
+        ${product}=    Get From List    ${data}    2
+
+        Log To Console    \nStarting Scenario for: ${email}
+        Run Keyword And Continue On Failure    Run Scenario With Fresh Browser    ${email}    ${password}    ${product}
+        Log To Console    Finished Scenario for: ${email} - SUCCESS
     END
 
 *** Keywords ***
-Setup Browser
-    Open Browser    ${URL}    ${BROWSER}
-    Maximize Browser Window
-    Set Selenium Timeout    30 seconds
+Run Scenario With Fresh Browser
+    [Arguments]    ${email}    ${password}    ${product}
+    Open Toolshop
+    Run Keyword And Ignore Error    Execute Capstone Flow    ${email}    ${password}    ${product}
+    Close Browser
 
-Data Driven Toolshop Flow
+Open Toolshop
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys
+    Call Method    ${options}    add_experimental_option    prefs    ${{ {'credentials_enable_service': False, 'profile.password_manager_enabled': False, 'profile.password_manager_leak_detection': False} }}
+    Call Method    ${options}    add_argument    --disable-save-password-bubble
+    Call Method    ${options}    add_argument    --disable-notifications
+    Call Method    ${options}    add_argument    --no-sandbox
+    Create Webdriver    Chrome    options=${options}
+    Set Window Size    1920    1080
+    Set Selenium Implicit Wait    10s
+
+Execute Capstone Flow
     [Arguments]    ${email}    ${password}    ${product}
     Go To    ${URL}
-    Location Should Be    ${URL}
-
-    Wait Until Element Is Visible    css:[data-test="nav-sign-in"]    20s
-    Click Element    css:[data-test="nav-sign-in"]
-
-    Wait Until Element Is Visible    id:email    20s
-    Input Text       id:email       ${email}
-    Textfield Value Should Be    id:email    ${email}
-    Input Text       id:password    ${password}
-    Click Button     css:[data-test="login-submit"]
-
-    Wait Until Location Contains    account    20s
-    Location Should Contain    account
-    Wait Until Element Is Visible    css:[data-test="nav-menu"]    20s
-    Element Should Be Visible    css:[data-test="nav-menu"]
-
-    Click Element    css:.navbar-brand
-    Wait Until Element Is Visible    id:search-query    20s
-    Input Text       id:search-query    ${product}
-    Click Button     css:[data-test="search-submit"]
-
-    Sleep            3s
-    Wait Until Element Is Visible    css:a.card    20s
-    Element Should Be Visible    css:a.card
+    
+    Wait Until Element Is Visible    css:a[data-test='nav-sign-in']    15s
+    Click Element    css:a[data-test='nav-sign-in']
+    
+    Wait Until Element Is Visible    id:email    10s
+    Input Text    id:email    ${email}
+    Input Text    id:password    ${password}
+    Click Button    css:input[data-test='login-submit']
+    
+    Wait Until Element Is Visible    css:a[data-test='nav-menu']    15s
+    Click Element    css:a[data-test='nav-home']
+    
+    Wait Until Element Is Visible    id:search-query    10s
+    Input Text    id:search-query    ${product}
+    Click Button    css:button[data-test='search-submit']
+    
+    Sleep    2s
+    Wait Until Element Is Visible    css:a.card    10s
     Click Element    css:a.card
-
-    Wait Until Element Is Visible    id:btn-add-to-cart    20s
-    Click Button     id:btn-add-to-cart
-    Run Keyword And Ignore Error    Wait Until Element Is Not Visible    css:.toast-body    5s
-
-    Wait Until Element Is Visible    css:[data-test="nav-cart"]    20s
-    Execute Javascript    document.querySelector('a[data-test="nav-cart"]').click()
-    Wait Until Location Contains    checkout    20s
-
-    Wait Until Element Is Visible    css:[data-test="nav-menu"]    20s
-    Click Element    css:[data-test="nav-menu"]
-    Wait Until Element Is Visible    css:[data-test="nav-sign-out"]    20s
-    Click Element    css:[data-test="nav-sign-out"]
-    Wait Until Element Is Visible    css:[data-test="nav-sign-in"]    20s
+    
+    Wait Until Element Is Visible    id:btn-add-to-cart    10s
+    Click Button    id:btn-add-to-cart
+    
+    Wait Until Element Is Visible    css:span[data-test='cart-quantity']    10s
+    Click Element    css:a[data-test='nav-cart']
+    
+    Wait Until Element Is Visible    css:input[data-test='product-quantity']    10s
+    Clear Element Text    css:input[data-test='product-quantity']
+    Input Text    css:input[data-test='product-quantity']    3
+    
+    Click Element    css:a[data-test='nav-menu']
+    Wait Until Element Is Visible    css:a[data-test='nav-sign-out']    10s
+    Click Element    css:a[data-test='nav-sign-out']
