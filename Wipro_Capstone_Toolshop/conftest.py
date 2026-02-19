@@ -1,4 +1,6 @@
 import pytest
+import os
+from datetime import datetime
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import GeckoDriverManager
@@ -7,16 +9,25 @@ from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium.webdriver.firefox.service import Service as FirefoxService
 from selenium.webdriver.edge.service import Service as EdgeService
 
-# This adds the custom command line flag '--browser'
 def pytest_addoption(parser):
-    parser.addoption("--browser", action="store", default="chrome", help="Type in browser: chrome, firefox, or edge")
+    parser.addoption("--browser", action="store", default="chrome")
+
+@pytest.hookimpl(tryfirst=True, hookwrapper=True)
+def pytest_runtest_makereport(item, call):
+    outcome = yield
+    rep = outcome.get_result()
+    if rep.when == "call" and rep.failed:
+        if "driver" in item.funcargs:
+            driver = item.funcargs["driver"]
+            if not os.path.exists("results"):
+                os.makedirs("results")
+            file_name = f"results/failure_{item.name}_{datetime.now().strftime('%H%M%S')}.png"
+            driver.save_screenshot(file_name)
 
 @pytest.fixture
 def driver(request):
-    # Retrieve the browser name from the command line
     browser_name = request.config.getoption("--browser").lower()
 
-    # Logic to switch between browsers
     if browser_name == "chrome":
         service = ChromeService(ChromeDriverManager().install())
         driver = webdriver.Chrome(service=service)
@@ -31,8 +42,5 @@ def driver(request):
 
     driver.maximize_window()
     driver.implicitly_wait(10)
-
     yield driver
-
-    # Teardown: This ensures the browser always closes
     driver.quit()

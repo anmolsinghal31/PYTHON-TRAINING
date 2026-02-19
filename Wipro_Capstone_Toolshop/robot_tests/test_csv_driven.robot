@@ -28,42 +28,42 @@ Setup Browser
 Data Driven Toolshop Flow
     [Arguments]    ${email}    ${password}    ${product}
     Go To    ${URL}
+    Location Should Be    ${URL}
 
     Wait Until Element Is Visible    css:[data-test="nav-sign-in"]    20s
     Click Element    css:[data-test="nav-sign-in"]
 
-    # Assert Email Field and Login
     Wait Until Element Is Visible    id:email    20s
-    Page Should Contain Element    id:email
     Input Text       id:email       ${email}
+    Textfield Value Should Be    id:email    ${email}
     Input Text       id:password    ${password}
     Click Button     css:[data-test="login-submit"]
 
-    # CRITICAL: Wait for login to finish before looking for menu
     Wait Until Location Contains    account    20s
+    Location Should Contain    account
     Wait Until Element Is Visible    css:[data-test="nav-menu"]    20s
-    Page Should Contain Element    css:[data-test="nav-menu"]
+    Element Should Be Visible    css:[data-test="nav-menu"]
 
-    # Search Process
     Click Element    css:.navbar-brand
     Wait Until Element Is Visible    id:search-query    20s
     Input Text       id:search-query    ${product}
     Click Button     css:[data-test="search-submit"]
 
-    # Product Selection and Add
     Sleep            3s
     Wait Until Element Is Visible    css:a.card    20s
+    Element Should Be Visible    css:a.card
     Click Element    css:a.card
+
     Wait Until Element Is Visible    id:btn-add-to-cart    20s
     Click Button     id:btn-add-to-cart
     Run Keyword And Ignore Error    Wait Until Element Is Not Visible    css:.toast-body    5s
 
-    # Cart and Logout
     Wait Until Element Is Visible    css:[data-test="nav-cart"]    20s
     Execute Javascript    document.querySelector('a[data-test="nav-cart"]').click()
+    Wait Until Location Contains    checkout    20s
+
     Wait Until Element Is Visible    css:[data-test="nav-menu"]    20s
     Click Element    css:[data-test="nav-menu"]
     Wait Until Element Is Visible    css:[data-test="nav-sign-out"]    20s
     Click Element    css:[data-test="nav-sign-out"]
-
-# command to run this - robot -d results robot_tests/test_csv_driven.robot
+    Wait Until Element Is Visible    css:[data-test="nav-sign-in"]    20s
