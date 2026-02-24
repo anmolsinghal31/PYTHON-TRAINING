@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7504f478-b4a5-4069-9e5b-2c9cd44a3fd7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 01/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Project 01/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 01/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 01/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 01/foodie_tests.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Project 01/foodie_tests.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 01/log.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 01/output.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 01/report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Project 01/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 01/test_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/results/log.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/results/output.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/results/pytest_report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/results/report.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/robot_tests/test_csv_driven.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/robot_tests/test_csv_driven.robot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/tests/test_csv_driven.py" beforeDir="false" afterPath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/tests/test_csv_driven.py" afterDir="false" />
-    </list>
+    <list default="true" id="7504f478-b4a5-4069-9e5b-2c9cd44a3fd7" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
