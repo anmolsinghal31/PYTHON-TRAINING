@@ -13,3 +13,5 @@ Check User Registration
     &{user}=    Create Dictionary    username=john_doe    email=john@email.com
     ${res}=    POST On Session    mysess    /api/v1/users    json=${user}
     Should Be Equal As Strings    ${res.status_code}    201
+
+# robot --timestampoutputs --outputdir Reports foodie_tests.robot

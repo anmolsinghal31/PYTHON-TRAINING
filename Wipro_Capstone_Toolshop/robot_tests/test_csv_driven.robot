@@ -79,3 +79,5 @@ Execute Capstone Flow
     Click Element    css:a[data-test='nav-menu']
     Wait Until Element Is Visible    css:a[data-test='nav-sign-out']    10s
     Click Element    css:a[data-test='nav-sign-out']
+
+#  robot -d results robot_tests/test_csv_driven.robot

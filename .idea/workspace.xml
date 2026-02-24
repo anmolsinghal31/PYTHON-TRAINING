@@ -6,6 +6,19 @@
   <component name="ChangeListManager">
     <list default="true" id="7504f478-b4a5-4069-9e5b-2c9cd44a3fd7" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project 01/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Project 01/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project 01/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 01/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project 01/foodie_tests.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Project 01/foodie_tests.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project 01/log.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project 01/output.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project 01/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project 01/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/Project 01/test_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/results/log.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/results/output.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/results/pytest_report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/results/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/robot_tests/test_csv_driven.robot" beforeDir="false" afterPath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/robot_tests/test_csv_driven.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/tests/test_csv_driven.py" beforeDir="false" afterPath="$PROJECT_DIR$/Wipro_Capstone_Toolshop/tests/test_csv_driven.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,105 +70,107 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.Python tests for DAY 10 QUESTION 01.test_divide_by_zero.executor": "Run",
-    "Python tests.Python tests in test_004_parameters.py.executor": "Run",
-    "Python tests.Python tests in test_lab5.py.executor": "Run",
-    "Python tests.Python tests in test_login.py.executor": "Run",
-    "Python.001.executor": "Run",
-    "Python.002.executor": "Run",
-    "Python.ABC_Constructor.executor": "Run",
-    "Python.Abstract_class.executor": "Run",
-    "Python.Alerts.executor": "Run",
-    "Python.BeautifulSoap.executor": "Run",
-    "Python.CASE STUDY 1.executor": "Run",
-    "Python.CLASS.executor": "Run",
-    "Python.CONSTRUCTORS_AND_DESTRUCTERS.executor": "Run",
-    "Python.Code.executor": "Run",
-    "Python.DAY 04 QUESTION 1.executor": "Run",
-    "Python.DAY 04 QUESTION 2.executor": "Run",
-    "Python.DAY 05 Q1.executor": "Run",
-    "Python.DAY 05 Q2.executor": "Run",
-    "Python.DAY 06 Q1.executor": "Run",
-    "Python.DAY 06 Q2.executor": "Run",
-    "Python.DAY 08 Q1.executor": "Run",
-    "Python.DAY 16 Q1.executor": "Run",
-    "Python.DAY 16 Q2.executor": "Run",
-    "Python.DAY 18 Q1.executor": "Run",
-    "Python.DAY 18 Q2.executor": "Run",
-    "Python.DAY 19 Q1.executor": "Run",
-    "Python.DAY 19 Q2.executor": "Run",
-    "Python.DAY 22 Q1_Database_Assignment.executor": "Run",
-    "Python.DAY 22 Q1_Mongo_Assignment.executor": "Run",
-    "Python.DAY 22 Q2.executor": "Run",
-    "Python.DAY 23 Q2.executor": "Run",
-    "Python.DAY23 Q1.executor": "Run",
-    "Python.Day 17 Q1.executor": "Run",
-    "Python.Day 17 Q2.executor": "Run",
-    "Python.Day21.Q1.executor": "Run",
-    "Python.Day21.Q2.executor": "Run",
-    "Python.Day21_OpenpyxlQ2.executor": "Run",
-    "Python.Day21_PandasQ2 (1).executor": "Run",
-    "Python.Day21_PandasQ2.executor": "Run",
-    "Python.Dropdowns.executor": "Run",
-    "Python.FindElements.executor": "Run",
-    "Python.FlaskUser.executor": "Run",
-    "Python.Flask_Request.executor": "Run",
-    "Python.GetRequest.executor": "Run",
-    "Python.Hierarcheal.executor": "Run",
-    "Python.Inheritance.executor": "Run",
-    "Python.JavaScriptExecutor.executor": "Run",
-    "Python.Login page_pagefactory.executor": "Run",
-    "Python.Login_page.executor": "Run",
-    "Python.Login_pagefactory.executor": "Run",
-    "Python.Match.executor": "Run",
-    "Python.Method Overloading.executor": "Run",
-    "Python.MultiLevel Inheritance.executor": "Run",
-    "Python.Multiple Inheritance.executor": "Run",
-    "Python.Multiple_Abstract.executor": "Run",
-    "Python.Operator Overloading.executor": "Run",
-    "Python.Overriding.executor": "Run",
-    "Python.Patch.executor": "Run",
-    "Python.SubProcess.executor": "Run",
-    "Python.Sync.executor": "Run",
-    "Python.TC001.executor": "Run",
-    "Python.TEST01.executor": "Run",
-    "Python.Threading.executor": "Run",
-    "Python.WindowHandling.executor": "Run",
-    "Python.app (1).executor": "Run",
-    "Python.app.executor": "Run",
-    "Python.client.executor": "Run",
-    "Python.driverfactory (1).executor": "Run",
-    "Python.driverfactory.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.register_page.executor": "Run",
-    "Python.test_lab5.executor": "Run",
-    "Python.test_login.executor": "Run",
-    "Robot.MyTest04_DD.robot (1).executor": "Run",
-    "Robot.MyTest04_DD.robot.executor": "Run",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "ai.playground.ignore.import.keys.banner.in.settings": "true",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "C:/Users/ANMOL SINGHAL/PycharmProjects/PythonProject2/DAY 12/RobotFW",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.fileTypes",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.Python tests for Amazon_Capstone_Pytest.tests.test_search.test_amazon_search_and_select.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests for DAY 10 QUESTION 01.test_divide_by_zero.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_004_parameters.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_lab5.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.Python tests in test_login.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.001.executor&quot;: &quot;Run&quot;,
+    &quot;Python.002.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ABC_Constructor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Abstract_class.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Alerts.executor&quot;: &quot;Run&quot;,
+    &quot;Python.BeautifulSoap.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CASE STUDY 1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CLASS.executor&quot;: &quot;Run&quot;,
+    &quot;Python.CONSTRUCTORS_AND_DESTRUCTERS.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Code.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 04 QUESTION 1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 04 QUESTION 2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 05 Q1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 05 Q2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 06 Q1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 06 Q2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 08 Q1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 16 Q1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 16 Q2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 18 Q1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 18 Q2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 19 Q1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 19 Q2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 22 Q1_Database_Assignment.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 22 Q1_Mongo_Assignment.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 22 Q2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY 23 Q2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.DAY23 Q1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day 17 Q1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day 17 Q2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day21.Q1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day21.Q2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day21_OpenpyxlQ2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day21_PandasQ2 (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.Day21_PandasQ2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Dropdowns.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FindElements.executor&quot;: &quot;Run&quot;,
+    &quot;Python.FlaskUser.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Flask_Request.executor&quot;: &quot;Run&quot;,
+    &quot;Python.GetRequest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Hierarcheal.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Inheritance.executor&quot;: &quot;Run&quot;,
+    &quot;Python.JavaScriptExecutor.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Login page_pagefactory.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Login_page.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Login_pagefactory.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Match.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Method Overloading.executor&quot;: &quot;Run&quot;,
+    &quot;Python.MultiLevel Inheritance.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Multiple Inheritance.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Multiple_Abstract.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Operator Overloading.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Overriding.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Patch.executor&quot;: &quot;Run&quot;,
+    &quot;Python.SubProcess.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Sync.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TC001.executor&quot;: &quot;Run&quot;,
+    &quot;Python.TEST01.executor&quot;: &quot;Run&quot;,
+    &quot;Python.Threading.executor&quot;: &quot;Run&quot;,
+    &quot;Python.WindowHandling.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.client.executor&quot;: &quot;Run&quot;,
+    &quot;Python.conftest.executor&quot;: &quot;Run&quot;,
+    &quot;Python.driverfactory (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.driverfactory.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.register_page.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_lab5.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_login.executor&quot;: &quot;Run&quot;,
+    &quot;Robot.MyTest04_DD.robot (1).executor&quot;: &quot;Run&quot;,
+    &quot;Robot.MyTest04_DD.robot.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;ai.playground.ignore.import.keys.banner.in.settings&quot;: &quot;true&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/ANMOL SINGHAL/PycharmProjects/PythonProject2/DAY 12/RobotFW&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12\RobotFW" />
@@ -163,60 +178,14 @@
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 07\SCREENSHOTS" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\Wipro_Capstone_Toolshop" />
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\Project 01" />
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12 &amp; DAY 13\DAY 13 QUESTION 01" />
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12 &amp; DAY 13" />
       <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 12" />
-      <recent name="C:\Users\ANMOL SINGHAL\PycharmProjects\PythonProject2\DAY 11 (pytest)\DAY 11 QUESTION 1" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.DAY 23 Q2">
-    <configuration name="DAY 22 Q1_Database_Assignment" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DAY 22" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DAY 22/DAY 22 Q1_Database_Assignment.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="DAY 22 Q2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject2" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DAY 22" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="RUN_TOOL" value="" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DAY 22/DAY 22 Q2.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.app">
     <configuration name="DAY 23 Q2" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject2" />
       <option name="ENV_FILES" value="" />
@@ -286,13 +255,52 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="conftest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Amazon_Capstone_Pytest/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Amazon_Capstone_Pytest/tests/conftest.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for Amazon_Capstone_Pytest.tests.test_search.test_amazon_search_and_select" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject2" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="RUN_TOOL" value="" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;Amazon_Capstone_Pytest.tests.test_search.test_amazon_search_and_select&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.app" />
+        <item itemvalue="Python tests.Python tests for Amazon_Capstone_Pytest.tests.test_search.test_amazon_search_and_select" />
+        <item itemvalue="Python.conftest" />
         <item itemvalue="Python.DAY 23 Q2" />
         <item itemvalue="Python.DAY23 Q1" />
-        <item itemvalue="Python.app" />
-        <item itemvalue="Python.DAY 22 Q2" />
-        <item itemvalue="Python.DAY 22 Q1_Database_Assignment" />
       </list>
     </recent_temporary>
   </component>

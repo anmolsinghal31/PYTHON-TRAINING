@@ -1,24 +1,23 @@
-# Foodie App REST API (Full 5-Module Implementation)
+# Foodie App (Ordering & Billing System)
 Implemented as per the Requirement Mapping document for the Final Project.
 
 ## Project Overview
-This project is a comprehensive Backend API for a food delivery application. It covers the full lifecycle from restaurant onboarding and user registration to order placement and admin oversight.
+The Foodie App is an integrated REST API that manages the full lifecycle of a food delivery business. It combines **Restaurant Management** with a complete **Ordering & Billing System**, ensuring that only admin-approved restaurants can serve customers.
 
-## 5 Core Modules
-- **Restaurant Module**: Handles registration and viewing of restaurant partners.
-- **Dish Module**: Manages the menu items and pricing for restaurants.
-- **Admin Module**: Provides a workflow for administrators to approve/verify restaurants.
-- **User Module**: Manages customer account creation.
-- **Order Module**: Processes new orders and tracks order history.
+## Core Features & Modules
+- **Restaurant Onboarding**: Handles registration of new restaurant partners.
+- **Admin Control**: A verification module for approving or rejecting restaurants.
+- **Dish Management**: Allows restaurants to manage their menus and pricing.
+- **User Management**: Dedicated system for customer account registration.
+- **Ordering & Billing**: Processes customer orders, calculates totals, and maintains billing history.
 
-## Testing & Automation
-This project includes two layers of automated testing:
-1. **Pytest**: Used for internal unit testing of API endpoints.
-2. **Robot Framework**: Used for automated acceptance testing (Keyword-driven).
-3. **Postman Collection**: A shared collection with saved success examples for all 18 requirements.
+## Automation & Testing Frameworks
+To ensure the reliability of the billing logic, this project includes:
+1. **Pytest**: Unit testing for all 5 modules and API endpoints.
+2. **Robot Framework**: Keyword-driven automated acceptance testing.
+3. **Postman Collection**: Fully documented requests with saved success examples for all 18 requirements.
 
 ## How to Run
-1. **Navigate to Folder**:
+1. **Navigate to Project Directory**:
    ```bash
    cd "Project 01"
-   

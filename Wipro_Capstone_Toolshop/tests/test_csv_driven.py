@@ -20,3 +20,6 @@ def test_wipro_capstone_flow(driver, email, password, product):
     shop.add_product_to_cart()
     shop.update_and_remove_cart_item()
     shop.logout_user()
+
+
+#  pytest tests/test_csv_driven.py --html=results/pytest_report.html --self-contained-html
